@@ -4,7 +4,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-12 page_title">
-					<h3 class="color_economy"><?php _e('ECONOMICS','autogov'); ?></h3>
+					<h3 class="color_economy"><?php _e('ECONOMY','autogov'); ?></h3>
 					<span><?php _e('Create, Offer, Exchange','autogov'); ?></span>
 				</div>
 			</div>
