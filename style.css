@@ -243,7 +243,7 @@ button.button.grey { background-color: #464645 !important; color: #FFF; }
 /* Card tabs */
 .cardtab { border-radius: 1.25em; background-color: #FFF; margin-top: 1em; margin-bottom: 1em; overflow: hidden;}
 .cardtab .cardtitle { padding-top: .5em; padding-bottom: .5em; }
-.cardtab .cardtitle h3 { display:inline-block; font-size: .75em; margin-right: 1em; margin-bottom:0; color: #819698; font-weight: bold; vertical-align: middle;}
+.cardtab .cardtitle h3 { display:inline-block; font-size: 1em; margin-right: 1em; margin-bottom:0; color: #819698; font-weight: bold; vertical-align: middle;}
 .cardtab .cardtitle span { display:inline; font-style: italic; font-weight: lighter; font-size: .75em; color: #242028; }
 .cardtab .cardtitle a[data-toggle="collapse"].collapsed { transform: rotate(0);}
 .cardtab .cardtitle a[data-toggle="collapse"] { transform: rotate(-45deg); transition: transform ease 0.2s; display: inline-block; font-size: 1.5em; line-height: 0.9em;}
