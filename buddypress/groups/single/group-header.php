@@ -28,7 +28,7 @@ do_action( 'bp_before_group_header' );
 <?php endif; ?>
 
 <div id="item-header-content">
-	
+
 	<?php
 
 	/**
@@ -40,9 +40,9 @@ do_action( 'bp_before_group_header' );
 
 	<div id="item-meta">
 
-		<div id="group-name">
+		<h3 id="group-name">
 			<?php bp_group_name(); ?>
-		</div>
+		</h3>
 
 		<div id="group-count">
 			<?php bp_group_total_members();?> <?php _e('Members','autogov'); ?>
@@ -89,4 +89,3 @@ do_action( 'bp_after_group_header' );  ?>
 	do_action( 'template_notices' ); ?>
 
 </div>
-

@@ -36,10 +36,10 @@
             <i class="fa fa-question-circle tips" title="<?php _e( "Add your Vontest title", 'autogov' );?>" data-placement="left" aria-hidden="true"></i>
           </div>
           <div class="md-form">
-            <textarea type="text" id="vontest_excerpt" class="md-textarea form-control" rows="3" maxlength="140" required><?php if($editing) echo get_the_excerpt($_GET['id']);?></textarea>
+            <textarea type="text" id="vontest_excerpt" class="md-textarea form-control" rows="3" maxlength="400" required><?php if($editing) echo get_the_excerpt($_GET['id']);?></textarea>
             <label for="vontest_excerpt"><?php _e('Short description','autogov'); ?></label>
             <i class="fa fa-question-circle tips textarea-tips" title="<?php _e( "Add your vontest short description", 'autogov' );?>" data-placement="left" aria-hidden="true"></i>
-            <span><?php _e('140 char. max','autogov'); ?></span>
+            <span><?php _e('400 char. max','autogov'); ?></span>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -49,6 +49,11 @@
                 </div>
                 <div><?php if($editing) echo get_the_post_thumbnail($_GET['id'],'thumbnail');?></div>
                 <input type="file" id="vontest_featuredimage" class="form-control">
+                <div style="font-size: 0.75em; font-style: italic;">
+                  <a href="https://ccsearch.creativecommons.org" target="_blank"><?php
+                  _e('If you don\'t have image. Choose your image from CC and upload','autogov');
+                  ?></a>
+                </div>
               </div>
             </div>
             <div class="form-group col-md-6">
@@ -121,8 +126,12 @@
 											    });
 											</script>
 									<?php }else{ ?>
-										<?php _e('Aun no hay tags creados.'); ?>
+										<input type="text" disabled="disabled" class="form-control" placehoder="" value="<?php _e('No tags yet'); ?>">
 									<?php } ?>
+                  <div>
+                    <a style="font-size: 0.75em; font-style: italic;" href="#" onclick="$('#vontest_newtags').toggle();return false;"><?php _e('Don\'t see your perfect tag? Click here'  ); ?></a>
+                    <input type="text" id="vontest_newtags" class="form-control hide" value="" placeholder="Write your tags sepparated with commas" >
+                  </div>
 								</div>
               </div>
             </div>

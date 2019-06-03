@@ -32,7 +32,11 @@
               <ul class="slider">
                 <?php while ($wc_query->have_posts()){
                         $wc_query->the_post();
-                        get_template_part('template-parts/default-box');
+                        if(get_post_type() == 'forum' || get_post_type() == 'bp-groups'){
+                          get_template_part('template-parts/group-box');
+                        }else{
+                          get_template_part('template-parts/default-box');
+                        }
                   }
                   wp_reset_postdata();
                 ?>

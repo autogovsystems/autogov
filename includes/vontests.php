@@ -217,6 +217,7 @@ function question_votographies_callback($post){
       <div>
         <strong><?php echo $v['_date_votography']; ?></strong>
         <div><?php echo __('Participants','autogov').': '.($v['_users_voted']-1); ?></div>
+        <div><?php echo __('Quorum','autogov').': '.($v['_quorum_votography']).'%'; ?></div>
         <ul class="">
           <?php
           if(!empty($v['_answers_on_votography'])){
@@ -565,6 +566,15 @@ function create_vontest() {
 
   if(isset($_FILES["vontest_featuredimage"]) && $_FILES["vontest_featuredimage"]!='')
     upload_vontest_image($post_id);
+
+  if(isset($_POST['vontest_newtags']) && $_POST['vontest_newtags']!==''){
+    $newtags = explode(",", $_POST['vontest_newtags']);
+    $array_newtags = array();
+    foreach($newtags as $nt){
+      $nt_id = wp_insert_term($nt,'vontest_tag');
+      wp_set_object_terms( $post_id, $nt_id, 'vontest_tag', true );
+    }
+  }
 
   $response=get_permalink($post_id);
   echo $response;

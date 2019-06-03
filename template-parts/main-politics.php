@@ -60,7 +60,7 @@
                     <div class ="image">
                       <a href="<?php echo get_term_link($cat->slug, 'topics');?>">
                         <?php $thumb = wp_get_attachment_url( $thumbnail_id );
-                        if(!$thumb){ $thumb = get_stylesheet_directory_uri().'/img/default_image.png'; } ?>
+                        if(!$thumb){ $thumb = get_stylesheet_directory_uri().'/img/default_image_topics.png'; } ?>
                         <img src="<?php echo $thumb; ?>" alt="<?php echo $cat->name; ?>" />
                       </a>
                     </div>
@@ -103,19 +103,9 @@
 
           <?php $terms = get_terms(array('taxonomy' => 'vontest_tag', 'hide_empty' => false)); ?>
           <?php if($terms){ ?>
-          <ul class="slider">
-            <?php foreach ( $terms as $term ) {
-              $thumbnail_id = get_term_meta( $term->term_id, 'category-image-id', true );
-              ?>
+          <ul class="colums">
+            <?php foreach ( $terms as $term ) { ?>
               <li>
-                  <div class ="image">
-                    <a href="<?php echo get_term_link($term->term_id, 'vontest_tag');?>">
-                      <?php
-                      $term_image = wp_get_attachment_url( $thumbnail_id );
-                      if(!$term_image){ $term_image = get_stylesheet_directory_uri().'/img/default_image.png'; } ?>
-                        <img src="<?php echo $term_image; ?>" alt="<?php echo $term->name; ?>" />
-                    </a>
-                  </div>
                   <div class="title">
                     <a href="<?php echo get_term_link($term->term_id, 'vontest_tag');?>">
                       <?php echo $term->name;?>

@@ -14,7 +14,6 @@
 	<?php $current_user = wp_get_current_user();
 	if ( $current_user->exists() ) { ?>
 	    <li><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="<?php echo is_page(get_option('woocommerce_myaccount_page_id'))?'active':''; ?>"><?php _e('Me','autogov'); ?></a></li>
-      <li><a class="" href="<?php echo wp_logout_url(); ?>" title="<?php _e('Logout','autogov'); ?>"><i class="fas fa-sign-out-alt"></i></a></li>
 	    <!--<li><a href="<?php echo wp_logout_url(); ?>">Logout</a></li>-->
 	<?php }else{ ?>
 	   <li><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="<?php echo is_page(get_option('woocommerce_myaccount_page_id'))?'active':''; ?>"><?php _e('Me','autogov'); ?></a></li>

@@ -275,6 +275,10 @@
 
                                     echo str_replace( '<select', '<select data-placeholder="'.__( 'Select product tags', 'dokan-lite' ).'" multiple="multiple" ', $drop_down_tags );
                                     ?>
+                                    <div>
+                                      <a style="font-size: 0.75em; font-style: italic;" href="#" onclick="$('#post-newtags').toggle();return false;"><?php _e('Don\'t see your perfect tag? Click here'  ); ?></a>
+                                      <input type="text" id="post-newtags" name="post_newtags" class="dokan-form-control form-control hide" value="" placeholder="Write your tags sepparated with commas" >
+                                    </div>
                                 </div>
                             </div>
                         </div>

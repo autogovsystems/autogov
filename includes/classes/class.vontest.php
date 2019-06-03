@@ -139,10 +139,12 @@ class Vontest {
       }
       do_action('creating_votography',$ans->ID);
 
+      $result = count_users();
       $metas = array(
           '_question_parent' => $this->id,
           '_date_votography' => $this->meta['_date_votography'][0],
           '_users_voted' => count(explode(',',$emails)),
+          '_quorum_votography' => (count(explode(',',$emails))-1)/$result['total_users'],
           '_answers_on_votography' => $this->answers->posts,
           '_answers_voted' => $answer_votes
       );
