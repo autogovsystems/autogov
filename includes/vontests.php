@@ -350,6 +350,7 @@ function resolution_parent_callback($post){
   $questions = new WP_Query( $args );
   ?>
   <select id="_question_parent" name="_question_parent">
+    <option value=""><?php _e('No parent vontest','autogov'); ?></option>
     <?php while($questions->have_posts()){
       $questions->the_post();
       ?>
