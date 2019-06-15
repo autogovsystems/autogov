@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 cardtitle">
       <?php if(is_front_page()){ ?>
-        <h3><?php _e('POLITICS','autogov'); ?></h3>
+        <h3><a href="<?php echo get_site_url(); ?>/politics"><?php _e('POLITICS','autogov'); ?></a></h3>
         <span><?php _e('Propose, Discuss, Decide','autogov'); ?></span>
       <?php }else{ ?>
         <h3><?php _e('VONTEST','autogov'); ?></h3>
@@ -14,7 +14,7 @@
   <div class="row tab">
       <button class="tablinks col-3 active" data-id="questions"><?php _e('Questions','autogov'); ?></button>
       <button class="tablinks col-3" data-id="answers"><?php _e('Answers','autogov'); ?></button>
-      <button class="tablinks col-3" data-id="specials"><?php _e('Specials','autogov'); ?></button>
+      <button class="tablinks col-3" data-id="specials"><?php _e('Public','autogov'); ?></button>
       <button class="tablinks col-3" data-id="resolutions"><?php _e('Resolutions','autogov'); ?></button>
   </div>
   <!-- Tab content -->
@@ -22,7 +22,11 @@
   <div id="tab-questions" class="tabcontent market servicios col-12 active">
     <div class="row">
       <div class="col-12 cardfilter text-right mt-2">
-        <a href="#" data-toggle="collapse" data-target="#filter-questions"><i class="fas fa-bars"></i></a>
+        <button class="hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#filter-questions">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
       </div>
       <div id="filter-questions" class="collapse col-12" aria-labelledby="filter-questions">
         <div class="row">
@@ -78,7 +82,11 @@
           <!-- Tab filter -->
           <div class="row">
             <div class="col-12 cardfilter text-right mt-2">
-              <a href="#" data-toggle="collapse" data-target="#filter-answers"><i class="fas fa-bars"></i></a>
+              <button class="hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#filter-answers">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
             </div>
             <div id="filter-answers" class="collapse col-12" aria-labelledby="filter-answers">
               <div class="row">
@@ -115,7 +123,11 @@
         if ($wc_query->have_posts()){?>
           <div class="row">
             <div class="col-12 cardfilter text-right mt-2">
-              <a href="#" data-toggle="collapse" data-target="#filter-specials"><i class="fas fa-bars"></i></a>
+              <button class="hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#filter-specials">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
             </div>
             <div id="filter-specials" class="collapse col-12" aria-labelledby="filter-specials">
               <div class="row">
@@ -150,7 +162,11 @@
         if ($wc_query->have_posts()){?>
           <?php /*<div class="row">
             <div class="col-12 cardfilter text-right mt-2">
-              <a href="#" data-toggle="collapse" data-target="#filter-resolutions"><i class="fas fa-bars"></i></a>
+              <button class="hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#filter-resolutions">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
             </div>
             <div id="filter-resolutions" class="collapse col-12" aria-labelledby="filter-resolutions">
               <div class="row">

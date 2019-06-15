@@ -124,7 +124,7 @@ button:focus {outline:none;}
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
-.hamburger { padding: 15px 15px; display: inline-block; cursor: pointer;
+.hamburger { padding: 0px; display: inline-block; cursor: pointer;
   transition-property: opacity, filter; transition-duration: 0.15s; transition-timing-function: linear;
   font: inherit; color: inherit; text-transform: none;
   background-color: transparent; border: 0; margin: 0; overflow: visible; }
@@ -139,6 +139,9 @@ button:focus {outline:none;}
 .hamburger-inner::before, .hamburger-inner::after { content: ""; display: block;}
 .hamburger-inner::before { top: -6px; }
 .hamburger-inner::after { bottom: -6px; }
+
+.cardfilter .hamburger-box { width: 20px; }
+.cardfilter .hamburger-inner,.cardfilter .hamburger-inner::before,.cardfilter .hamburger-inner::after { width: 20px; }
 /* Squeeze */
 .hamburger--squeeze .hamburger-inner { transition-duration: 0.075s; transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 .hamburger--squeeze .hamburger-inner::before { transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
@@ -250,12 +253,12 @@ button.button.grey { background-color: #464645 !important; color: #FFF; }
 .cardtab .tab { border: 1px solid #242028; border-left:0; border-right:0; border-top:0; border-bottom: 1px solid #eaeaea;}
 .cardtab .row + .tab { border-top: 1px solid #eaeaea; }
 .cardtab .row + .collapse > .tab { border-top: 1px solid #eaeaea; }
-.cardtab .tab button, .cardtab .tab a { text-transform: uppercase; background-color: inherit; border: none; outline: none; cursor: pointer; transition: 0.3s; color: #819698; overflow: visible; padding-top:.5em; padding-bottom:.5em; font-size:1.2em; text-align: center; display:block; }
+.cardtab .tab button, .cardtab .tab a { text-transform: uppercase; background-color: inherit; border: none; outline: none; cursor: pointer; transition: 0.3s; color: #819698; overflow: visible; padding-top:.5em; padding-bottom:.5em; font-size:1.2em; text-align: center; display:block; font-weight: 400;}
 .cardtab .tab button:hover, .cardtab .tab a:hover { text-decoration: none;}
 .cardtab .tab button.active, .cardtab .tab a.active { color: #242028; position: relative; }
 .cardtab .tab button.active:after, .cardtab .tab a.active:after,.item-list-tabs li.current a:after { content:''; width: 90%; position: absolute; height: 3px; bottom:-2px; background-color: #242028; left: 5%;  }
 
-.cardtab .tabcontent { display: none; }
+.cardtab .tabcontent { display: none; min-height: 6em; }
 .cardtab .tabcontent.active { display:block; }
 .cardtab .tabcontent ul { list-style: none; padding:0; margin:0 0 0.5em; }
 .cardtab .tabcontent ul.slider { text-align: center; white-space: nowrap; overflow: hidden;}
@@ -263,8 +266,13 @@ button.button.grey { background-color: #464645 !important; color: #FFF; }
 .cardtab .tabcontent ul.slider li .image { border-radius: 1em; overflow: hidden; margin-bottom: 1em; padding-top:100%; position: relative; width:100%;}
 .cardtab .tabcontent ul.slider li a{ display: block;}
 .cardtab .tabcontent ul.slider li a img { position: absolute; max-height: 100%; height: auto; top:50%; left:50%; transform: translate(-50%,-50%); width: auto; min-width:100%; max-width: inherit;}
-.cardtab .tabcontent ul.slider li .title a{ color:#819698; display: block;}
+.cardtab .tabcontent ul.slider li .title a{ color:#819698; display: block; font-size: .8em;}
 .cardtab .tabcontent ul.orderby li{ display:inline; }
+
+.cardtab .tabcontent ul.colums { column-count: 3; }
+.cardtab .tabcontent ul.colums li { padding: 0.25em;  }
+
+#tab-resolutions.tabcontent ul.slider li { width:80px; }
 
 #filter-groups,
 #filter-services,
@@ -290,7 +298,7 @@ button.button.grey { background-color: #464645 !important; color: #FFF; }
 button.color_politics, a.color_politics { border-color: #d05024 !important; }
 /*button.color_politics:hover, a.color_politics:hover { background-color: #d05024 !important; color:#fff !important; }*/
 .nav-menu li a.active.color_politics:before { background-color: #d05024; }
-#pastilla-politics.cardtab .cardtitle h3 { color: #d05024; }
+#pastilla-politics.cardtab .cardtitle h3, #pastilla-politics.cardtab .cardtitle h3 a { color: #d05024; }
 /*#pastilla-politics.cardtab .tab { border-color: #d05024; }*/
 #pastilla-politics.cardtab .tab { border-color: #eaeaea; }
 #pastilla-politics.cardtab .tab button.active,#pastilla-politics.cardtab .tab a.active { color: #d05024; }
@@ -301,7 +309,7 @@ button.color_politics, a.color_politics { border-color: #d05024 !important; }
 .color_economy { color: #609627 !important; }
 button.color_economy, a.color_economy { border-color: #609627 !important; }
 .nav-menu li a.active.color_economy:before { background-color: #609627; }
-#pastilla-economy.cardtab .cardtitle h3 { color: #609627; }
+#pastilla-economy.cardtab .cardtitle h3, #pastilla-economy.cardtab .cardtitle h3 a { color: #609627; }
 /*#pastilla-economy.cardtab .tab { border-color: #609627; }*/
 #pastilla-economy.cardtab .tab { border-color: #eaeaea; }
 #pastilla-economy.cardtab .tab button.active,#pastilla-economy.cardtab .tab a.active:after { color: #609627; }
@@ -312,7 +320,7 @@ button.color_economy, a.color_economy { border-color: #609627 !important; }
 button.color_social, a.color_social { border-color: #86165b !important; }
 .nav-menu li a.active.color_social:before { background-color: #86165b; }
 /*#pastilla-social.cardtab .cardtitle h3 { color: #86165b; }*/
-#pastilla-social.cardtab .cardtitle h3 { color: #86165b; }
+#pastilla-social.cardtab .cardtitle h3, #pastilla-social.cardtab .cardtitle h3 a { color: #86165b; }
 #pastilla-social.cardtab .tab { border-color: #eaeaea; }
 #pastilla-social.cardtab .tab button.active, #pastilla-social.cardtab .tab a.activer, #pastilla-social .item-list-tabs li.current a { color: #86165b !important; }
 #pastilla-social.cardtab .tab button.active:after, #pastilla-social.cardtab .tab a.active:after, #pastilla-social .item-list-tabs li.current a:after { background-color: #86165b; }
@@ -767,11 +775,10 @@ background-color: #eee !important;
 @media (min-width: 992px) {
 	body { font-size: 16px; }
 	.cardtab .tabcontent ul.slider li { width:16%; padding: 1em; }
+	.cardtab .tabcontent ul.colums { column-count: 5; }
 }
 
 @media (min-width: 1200px) {
-	.nav-menu button { display:none; }
-	.nav-menu ul { display:inline-block; }
 	.cardtab .tabcontent ul.slider li { width:12%; padding: 1em; }
 	.container-fluid {max-width: 1400px;}
 

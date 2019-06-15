@@ -63,10 +63,12 @@
 			</div>
 
 			<?php //the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+			<?php $vontest_parent = get_post_meta(get_the_ID(),'_question_parent',true);
+			if($vontest_parent){ ?>
 			<div class="row vontest_comments_bottom" style="padding-top:1em; padding-bottom: 1em; min-height: auto;">
 				<div class="col-12">
 					<h3><?php _e('Vontest parent','autogov'); ?></h3>
-					<?php $vontest_parent = get_post_meta(get_the_ID(),'_question_parent',true); ?>
+
 					<p><a href="<?php the_permalink($vontest_parent); ?>"><?php echo get_the_title($vontest_parent); ?></a>
 						<?php //_e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
 
@@ -74,7 +76,8 @@
 				</div>
 			</div>
 
-			<?php //comments_template(); ?>
+			<?php }
+			//comments_template(); ?>
 
 		</article>
 		<!-- /article -->

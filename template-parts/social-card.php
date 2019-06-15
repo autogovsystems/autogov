@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-12 cardtitle">
       <?php if(is_front_page()){ ?>
-        <h3><?php _e('SOCIAL','autogov'); ?></h3>
+        <h3><a href="<?php echo  get_site_url().'/'.bp_get_activity_root_slug(); ?>"><?php _e('SOCIAL','autogov'); ?></a></h3>
         <span><?php _e('Communicate, Partner, Play','autogov'); ?></span>
       <?php }else{ ?>
         <h3><?php _e('NAVIGATOR','autogov'); ?></h3>
@@ -26,7 +26,11 @@
     <div id="tab-groups" class="tabcontent social groups col-12 active">
       <div class="row">
         <div class="col-12 cardfilter text-right mt-2">
-          <a href="#" data-toggle="collapse" data-target="#filter-groups"><i class="fas fa-bars"></i></a>
+          <button class="hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#filter-groups">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
         </div>
         <div id="filter-groups" class="collapse col-12" aria-labelledby="filter-groups">
           <div class="row">
@@ -38,7 +42,7 @@
             </div>
             <div class="col-4 text-right">
               <?php if(is_user_logged_in()){ ?>
-                <a href="/groups/create/step/group-details/" class="button"><?php _e('Create new group','autogov') ?></a>
+                <a href="<?php echo trailingslashit( bp_get_groups_directory_permalink() . 'create'); ?>" class="button"><?php _e('Create new group','autogov') ?></a>
               <?php } ?>
             </div>
           </div>
@@ -69,7 +73,11 @@
     <div id="tab-people" class="tabcontent social people col-12">
       <div class="row">
         <div class="col-12 cardfilter text-right mt-2">
-          <a href="#" data-toggle="collapse" data-target="#filter-people"><i class="fas fa-bars"></i></a>
+          <button class="hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#filter-people">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
         </div>
         <div id="filter-people" class="collapse col-12" aria-labelledby="filter-people">
           <div class="row">

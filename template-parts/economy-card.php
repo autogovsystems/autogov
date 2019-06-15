@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="col-12 cardtitle">
-      <h3><?php _e('ECONOMY','autogov'); ?></h3>
+      <h3><a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>"><?php _e('ECONOMY','autogov'); ?></a></h3>
       <span><?php _e('Create, Offer, Exchange','autogov'); ?></span>
     </div>
   </div>
@@ -18,7 +18,11 @@
     <!-- Tab filter -->
     <div class="row">
       <div class="col-12 cardfilter text-right mt-2">
-        <a href="#" data-toggle="collapse" data-target="#filter-services"><i class="fas fa-bars"></i></a>
+        <button class="hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#filter-services">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
       </div>
       <div id="filter-services" class="collapse col-12" aria-labelledby="filter-services">
         <div class="row">
@@ -63,7 +67,11 @@
     <!-- Tab filter -->
     <div class="row">
       <div class="col-12 cardfilter text-right mt-2">
-        <a href="#" data-toggle="collapse" data-target="#filter-products"><i class="fas fa-bars"></i></a>
+        <button class="hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#filter-products">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
       </div>
       <div id="filter-products" class="collapse col-12" aria-labelledby="filter-products">
         <div class="row">
@@ -108,7 +116,11 @@
       <!-- Tab filter -->
       <div class="row">
         <div class="col-12 cardfilter text-right mt-2">
-          <a href="#" data-toggle="collapse" data-target="#filter-events"><i class="fas fa-bars"></i></a>
+          <button class="hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#filter-events">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
         </div>
         <div id="filter-events" class="collapse col-12" aria-labelledby="filter-events">
           <div class="row">

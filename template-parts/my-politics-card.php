@@ -5,7 +5,7 @@
         <h3><?php _e('POLITICS','autogov'); ?></h3>
         <span><?php _e('Propose, Discuss, Decide','autogov'); ?></span>
       <?php }else{ ?>
-        <h3><?php _e('VONTEST','autogov'); ?></h3>
+        <h3><?php _e('POLITICS','autogov'); ?></h3>
         <span class="d-none"><?php _e('A Vontest = 1 Ques-on, Unlimited Answers, Evalua-on of the Answers, and a Voted Desicion','autogov'); ?></span>
       <?php } ?>
     </div>
@@ -53,7 +53,11 @@
           <!-- Tab filter -->
           <div class="row d-none">
             <div class="col-12 cardfilter text-right mt-2">
-              <a href="#" data-toggle="collapse" data-target="#filter-answers"><i class="fas fa-bars"></i></a>
+              <button class="hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#filter-answers">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
             </div>
             <div id="filter-answers" class="collapse col-11" aria-labelledby="filter-answers">
               <div class="row">
@@ -119,7 +123,7 @@
                     <div class ="image">
                       <a href="<?php echo get_term_link($cat->slug, 'topics');?>">
                         <?php $thumb = wp_get_attachment_url( $thumbnail_id );
-                        if(!$thumb){ $thumb = get_stylesheet_directory_uri().'/img/default_image.png'; } ?>
+                        if(!$thumb){ $thumb = get_stylesheet_directory_uri().'/img/default_image_topics.png'; } ?>
                         <img src="<?php echo $thumb; ?>" alt="<?php echo $cat->name; ?>" />
                       </a>
                     </div>

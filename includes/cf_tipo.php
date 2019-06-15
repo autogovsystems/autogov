@@ -8,29 +8,52 @@ add_action( 'dokan_product_updated', 'save_dokan_product_type', 10, 2); //guarda
 
 /*metabox para tipo: servicio, producto o evento*/
 function tipo_woo(){
- 
+
     global $post;
     echo '<div class="options_group">';
- 
+
     woocommerce_wp_select( array(
         'id'          => 'tipo',
         'value'       => get_post_meta( $post->ID, 'tipo', true ),
         'label'       => 'Tipo',
         'options'     => array( 'producto' => 'Producto', 'servicio' => 'Servicio',  'evento' => 'Evento'),
     ) );
- 
+
     echo '</div>';
- 
+
 }
 
 /*guardado de meta de tipo*/
 function tipo_woo_save( $id ){
-     
-    if( !empty( $_POST['tipo'] ) ) 
+
+    if( !empty( $_POST['tipo'] ) )
         update_post_meta( $id, 'tipo', $_POST['tipo'] );
+
+    if( !empty( $_POST['tipo'] ) )
+        update_post_meta( $id, 'tipo', $_POST['tipo'] );
+
+
+    if( !empty( $_POST['post_newtags'] ) ){
+      $newtags = explode(",", $_POST['post_newtags']);
+      $array_newtags = array();
+      foreach($newtags as $nt){
+        $nt_id = wp_insert_term($nt,'product_tag');
+        wp_set_object_terms( $id, $nt_id, 'product_tag', true );
+      }
+    }
+
 }
 
 function save_dokan_product_type($product_id, $data)
 {
     update_post_meta( $product_id, 'tipo', $_POST['tipo'] );
+    if( !empty( $_POST['post_newtags'] ) ){
+      $newtags = explode(",", $_POST['post_newtags']);
+      $array_newtags = array();
+      foreach($newtags as $nt){
+        $nt_id = wp_insert_term($nt,'product_tag');
+        wp_set_object_terms( $product_id, $nt_id, 'product_tag', true );
+      }
+    }
+
 }

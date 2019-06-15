@@ -10,9 +10,9 @@
   <div class="row tab">
       <button class="tablinks col  active" data-id="articles"><?php _e('My Articles','autogov'); ?></button>
       <button class="tablinks col" data-id="voins"><?php _e('My Voins','autogov'); ?></button>
-      <a class="col" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>/orders/"><?php _e('Orders','autogov'); ?></a>
-      <a class="col" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>/edit-address/"><?php _e('Addresses','autogov'); ?></a>
-      <a class="col <?php echo $myshop_selected; ?>" href="/dashboard/"><?php _e('My shop','autogov'); ?></a>
+      <a class="col" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>/orders/"><?php _e('My Orders','autogov'); ?></a>
+      <a class="col" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>/edit-address/"><?php _e('My Addresses','autogov'); ?></a>
+      <a class="col <?php echo $myshop_selected; ?>" href="/dashboard/"><i class="fas fa-shopping-bag"></i> <?php _e('My shop','autogov'); ?></a>
   </div>
   <!-- Tab content -->
   <div class="row">
@@ -29,7 +29,11 @@
           <!-- Tab filter -->
           <div class="row d-none">
             <div class="col-12 cardfilter text-right mt-2">
-              <a href="#" data-toggle="collapse" data-target="#filter-services"><i class="fas fa-bars"></i></a>
+              <button class="hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#filter-services">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
             </div>
             <div id="filter-services" class="collapse col-11" aria-labelledby="filter-services">
               <div class="row">
@@ -54,18 +58,24 @@
                 set_query_var('orders', $orders);
               ?>  <li>
                     <div>
-                    	<div class ="market-image">
-                			<a href="<?php echo dokan_edit_product_url( $post->ID ); ?>">
-                				<?php echo get_the_post_thumbnail($post->ID, array(200,200)); ?>
-                			</a>
-                		</div>
-                		<div class="market-title">
-                			<a href="<?php echo dokan_edit_product_url( $post->ID ); ?>">
-                				<?php echo the_title();?>
-                			</a>
-                		</div>
-                	</div>
-                </li>
+                    	<div class ="image">
+                        <a href="<?php echo the_permalink();?>">
+                          <?php $thumb = get_the_post_thumbnail($post->ID, array(200,200));
+                            if($thumb){
+                              echo $thumb;
+                            }else{
+                              echo '<img src="'.get_stylesheet_directory_uri().'/img/default_image_product.png" />';
+                            }
+                          ?>
+                        </a>
+                		    </div>
+                  		<div class="title">
+                  			<a href="<?php echo dokan_edit_product_url( $post->ID ); ?>">
+                  				<?php echo the_title();?>
+                  			</a>
+                  		</div>
+                  	</div>
+                  </li>
                 <?php
               }
               wp_reset_postdata();

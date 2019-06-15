@@ -29,24 +29,23 @@ do_action( 'bp_before_member_header' ); ?>
 
 			</a>
 		</div><!-- #item-header-avatar -->
+		<div id="item-buttons" style="float: right; margin-top: 230px;"><?php
 
-		<div id="item-header-content">
+			/**
+			 * Fires in the member header actions section.
+			 *
+			 * @since 1.2.6
+			 */
+			do_action( 'bp_member_header_actions' ); ?></div><!-- #item-buttons -->
+		<div id="item-header-content" style="margin-top:-80px;">
 
 			<?php if ( bp_is_active( 'activity' ) && bp_activity_do_mentions() ) : ?>
-				<h2 class="user-nicename">@<?php bp_displayed_user_mentionname(); ?></h2>
+				<h3><?php bp_displayed_user_fullname(); ?>
+                <small>@<?php bp_displayed_user_mentionname(); ?></small></h3>
 			<?php endif;
 			echo do_shortcode('[mycred_my_balance type="applauds" title="'.__('Current Applauds:').'" user_id="'.bp_displayed_user_id().'"]');
 
 			?>
-
-			<div id="item-buttons"><?php
-
-				/**
-				 * Fires in the member header actions section.
-				 *
-				 * @since 1.2.6
-				 */
-				do_action( 'bp_member_header_actions' ); ?></div><!-- #item-buttons -->
 
 			<span class="activity" data-livestamp="<?php bp_core_iso8601_date( bp_get_user_last_activity( bp_displayed_user_id() ) ); ?>"><?php bp_last_activity( bp_displayed_user_id() ); ?></span>
 

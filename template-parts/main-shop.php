@@ -61,7 +61,7 @@
                     <div class ="image">
                       <a href="<?php echo get_term_link($cat->slug, 'product_cat');?>">
                         <?php $thumb = wp_get_attachment_url( $thumbnail_id );
-                        if(!$thumb){ $thumb = get_stylesheet_directory_uri().'/img/default_image.png'; } ?>
+                        if(!$thumb){ $thumb = get_stylesheet_directory_uri().'/img/default_image_product_cat.png'; } ?>
                         <img src="<?php echo $thumb; ?>" alt="<?php echo $cat->name; ?>" />
                       </a>
                     </div>
@@ -104,19 +104,12 @@
 
           <?php $terms = get_terms(array('taxonomy' => 'product_tag', 'hide_empty' => false)); ?>
           <?php if($terms){ ?>
-          <ul class="slider">
+          <ul>
             <?php foreach ( $terms as $term ) {
               $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
               ?>
               <li>
                 <div <?php if(is_tax('product_tag',$term->term_id)){ ?> class="active" <?php } ?>>
-                  <div class ="image">
-                    <a href="<?php echo get_term_link($term->slug, 'product_tag');?>">
-                      <?php $thumb = wp_get_attachment_url( $thumbnail_id );
-                      if(!$thumb){ $thumb = get_stylesheet_directory_uri().'/img/default_image.png'; } ?>
-                      <img src="<?php echo $thumb; ?>" alt="<?php echo $term->name; ?>" />
-                    </a>
-                  </div>
                   <div class="market-title">
                     <a href="<?php echo get_term_link($term->slug, 'product_tag');?>">
                       <?php echo $term->name;?>

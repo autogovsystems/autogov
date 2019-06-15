@@ -11,7 +11,6 @@
       <button class="tablinks col active" data-id="groups"><?php _e('My Groups','autogov'); ?></button>
       <button class="tablinks col" data-id="people"><?php _e('My People','autogov'); ?></button>
       <button class="tablinks col" data-id="searchsocial"><?php _e('My Game','autogov'); ?></button>
-      <a class="col" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>/edit-account/"><?php _e('My Account','autogov'); ?></a>
       <a class="col" href="<?php echo bp_loggedin_user_domain(); ?>profile/edit/" ><?php _e('Social profile','autogov'); ?></a>
   </div>
 
@@ -21,7 +20,11 @@
     <div id="tab-groups" class="tabcontent social groups col-12 active">
       <div class="row d-none">
         <div class="col-12 cardfilter text-right mt-2">
-          <a href="#" data-toggle="collapse" data-target="#filter-groups"><i class="fas fa-bars"></i></a>
+          <button class="hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#filter-groups">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
         </div>
         <div id="filter-groups" class="collapse col-11" aria-labelledby="filter-groups">
           <div class="row">
@@ -65,7 +68,11 @@
         <!-- Tab filter -->
         <div class="row">
           <div class="col-12 cardfilter text-right mt-2">
-            <a href="#" data-toggle="collapse" data-target="#filter-people"><i class="fas fa-bars"></i></a>
+            <button class="hamburger hamburger--squeeze" type="button" data-toggle="collapse" data-target="#filter-people">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
           </div>
           <div id="filter-people" class="collapse col-11" aria-labelledby="filter-people">
             <div class="row">

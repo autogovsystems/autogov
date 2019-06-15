@@ -40,4 +40,9 @@ if(in_array($active_menu,array('dashboard','dashboard/products','dashboard/order
   </div>
 </div>
 <?php
-}
+}else{ ?>
+  <div class="row tab" id="menu-myaccount">
+      <a class="col" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>/edit-account/"><i class="fas fa-user"></i> <?php _e('Edit my Account','autogov'); ?></a>
+      <a class="col" href="<?php echo wp_logout_url(); ?>"><i class="fas fa-sign-out-alt"></i> <?php _e('Logout','autogov'); ?></a>
+  </div>
+<?php }

@@ -11,7 +11,7 @@
 			<header class="cardtitle">
 				<div class="row">
 					<div class="col-10">
-						<h3><?php _e( 'Topics for', 'html5blank' ); ?> <?php echo $taxonomy->name; ?></h3>
+						<h3><?php _e( 'Vontests for', 'autogov' ); ?> <?php echo $taxonomy->name; ?></h3>
 					</div>
 					<div class="col-2 text-right">
 						<?php

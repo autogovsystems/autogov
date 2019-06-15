@@ -81,7 +81,7 @@
 							<div class="vontest_metrics">
 								<strong><?php _e('Vontest metrics','autogov') ?></strong>
 								<div><?php echo $current_vontest->answers->post_count.' '.__( 'answers', 'autogov' ); ?></div>
-								<div><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'autogov' ), __( '1 Comment', 'autogov' ), __( '% Comments', 'autogov' )); ?></div>
+								<div><?php //if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'autogov' ), __( '1 Comment', 'autogov' ), __( '% Comments', 'autogov' )); ?></div>
 								<div><?php //_e( '%s votes', 'autogov' ); ?></div>
 							</div>
 							<!-- /post details -->
@@ -271,7 +271,7 @@
 		               <div class="md-form">
 		                 <div for="vontest_featuredimage"><?php _e('Featured image','autogov'); ?> <i class="fa fa-question-circle tips inline" title="<?php _e( "Add your answer featured image", 'autogov' );?>" data-placement="left" aria-hidden="true"></i></div>
 		                 <input type="file" id="vontest_featuredimage" class="form-control">
-										 
+
 		               </div>
 		             </div>
 		           </div>
@@ -301,10 +301,12 @@
 					<div class="col-12 pt-3 pb-3 border-top">
 						<p><?php _e('History of this Vontest','autogov'); ?></p>
 						<div><?php $votographies = get_post_meta(get_the_ID(), '_votographies', true);
+						if($votographies){
 					  foreach($votographies as $v){ ?>
 						    <div>
 						      <strong><?php echo __('Votography','autogov').' '.date_i18n( get_option( 'date_format' ), strtotime($v['_date_votography'])); ?></strong>
 						      <div><?php echo __('Participantes','autogov').': '.($v['_users_voted']-1); ?></div>
+									<div><?php echo __('Quorum','autogov').': '.($v['_quorum_votography']).'%'; ?></div>
 						      <ul class="mt-0">
 						        <?php
 						        if(!empty($v['_answers_on_votography'])){
@@ -317,7 +319,10 @@
 						      </ul>
 						    </div>
 						    <?php
-						  } ?>
+						  }
+						}else{?>
+							<p><?php _e('There are not votographies yet','autogov'); ?></p>
+						<?php } ?>
 						</div>
 					</div>
 					<div class="col-12 pt-3 pb-3 border-top">
@@ -326,7 +331,7 @@
 						$current_vontest->get_resolutions();
 						if($current_vontest->resolutions->have_posts()){
 							foreach($current_vontest->resolutions->posts as $res){ ?>
-								<div><a href="<?php get_permalink($res->ID); ?>"><strong><?php echo $res->post_title; ?></strong></a><br />
+								<div><a href="<?php echo get_the_permalink($res->ID); ?>"><strong><?php echo $res->post_title; ?></strong></a><br />
 								<?php echo $res->post_content; ?></div>
 							<?php }
 						}else{

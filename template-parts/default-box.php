@@ -7,7 +7,7 @@
           if($thumb){
             echo $thumb;
           }else{
-            echo '<img src="'.get_stylesheet_directory_uri().'/img/default_image.png" />';
+            echo '<img src="'.get_stylesheet_directory_uri().'/img/default_image_'.get_post_type().'.png" />';
           }
         ?>
 			</a>
