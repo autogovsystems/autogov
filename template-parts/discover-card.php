@@ -25,17 +25,22 @@
     <!-- Tab content -->
     <div class="row">
       <div id="tab-newest" class="tabcontent market servicios col-12 active">
-            <?php $params = array('posts_per_page' => -1, 'post_type' => array('product','question','bp-groups','forum'), 'orderby' => 'date', 'order' => 'DESC');
+            <?php $params = array('posts_per_page' => -1, 'post_type' => array('product','question','forum'), 'orderby' => 'date', 'order' => 'DESC');
             $wc_query = new WP_Query($params);
 
             if ($wc_query->have_posts()){?>
               <ul class="slider">
-                <?php while ($wc_query->have_posts()){
+                <?php
+                $array_link = array();
+                while ($wc_query->have_posts()){
                         $wc_query->the_post();
-                        if(get_post_type() == 'forum' || get_post_type() == 'bp-groups'){
-                          get_template_part('template-parts/group-box');
-                        }else{
-                          get_template_part('template-parts/default-box');
+                        if(!in_array(get_the_permalink(),$array_link)){
+                          if(get_post_type() == 'forum'){
+                            get_template_part('template-parts/forum-box');
+                          }else{
+                            get_template_part('template-parts/default-box');
+                          }
+                          $array_link[] = get_the_permalink();
                         }
                   }
                   wp_reset_postdata();

@@ -36,7 +36,7 @@
 						<div class="col-12 text-center">
 							<!-- logo -->
 							<div class="logo-autogov">
-								<a href="<?php echo home_url(); ?>">
+								<a href="https://autogov.systems" target="_blank">
 									AUTOGOV
 								</a>
 							</div>

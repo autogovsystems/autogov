@@ -29,7 +29,7 @@
 		</section>
 
 		<section>
-			<?php get_template_part('/template-parts/aboutautogov-card'); ?>
+			<?php //get_template_part('/template-parts/aboutautogov-card'); ?>
 		</section>
 
 	</main>
