@@ -12,7 +12,8 @@
       </a>
 		</div>
 		<div class="title">
-			<a href="<?php bp_group_permalink() ?>"><?php bp_group_name(); ?></a>
+      <?php $gname = bp_get_group_name(); ?>
+			<a href="<?php bp_group_permalink() ?>"><?php echo (strlen($gname) > 50)? substr($gname,0,50)."..." : $gname; ?></a>
 		</div>
 	</div>
 </li>

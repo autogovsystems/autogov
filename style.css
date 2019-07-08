@@ -272,7 +272,7 @@ button.button.grey { background-color: #464645 !important; color: #FFF; }
 .cardtab .tabcontent ul.colums { column-count: 3; }
 .cardtab .tabcontent ul.colums li { padding: 0.25em;  }
 
-#tab-resolutions.tabcontent ul.slider li { width:80px; }
+#tab-resolutions.tabcontent ul.slider li { width:12%; min-width: 100px; }
 
 #filter-groups,
 #filter-services,

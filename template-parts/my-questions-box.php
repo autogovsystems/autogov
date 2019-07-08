@@ -15,8 +15,9 @@
 			</a>
 		</div>
 		<div class="title">
+      <?php $gname = get_the_title(); ?>
 			<a href="/createvontest?id=<?php the_ID();?>">
-				<?php echo the_title();?>
+        <?php echo (strlen($gname) > 50)? substr($gname,0,50)."..." : $gname; ?>
 			</a>
 		</div>
 	</div>

@@ -12,8 +12,9 @@
 			</a>
 		</div>
 		<div class="market-title">
+      <?php $gname = get_the_title(); ?>
 			<a href="<?php echo the_permalink();?>">
-				<?php echo the_title();?>
+				<?php echo (strlen($gname) > 50)? substr($gname,0,50)."..." : $gname; ?>
 			</a>
 		</div>
 	</div>

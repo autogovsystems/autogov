@@ -303,21 +303,39 @@
 						<div><?php $votographies = get_post_meta(get_the_ID(), '_votographies', true);
 						if($votographies){
 					  foreach($votographies as $v){ ?>
-						    <div>
-						      <strong><?php echo __('Votography','autogov').' '.date_i18n( get_option( 'date_format' ), strtotime($v['_date_votography'])); ?></strong>
-						      <div><?php echo __('Participantes','autogov').': '.($v['_users_voted']-1); ?></div>
-									<div><?php echo __('Quorum','autogov').': '.($v['_quorum_votography']).'%'; ?></div>
-						      <ul class="mt-0">
-						        <?php
-						        if(!empty($v['_answers_on_votography'])){
-						          foreach($v['_answers_on_votography'] as $a) { ?>
-						            <li><?php echo $a->post_title.' : '.$v['_answers_voted'][$a->ID] ?></li>
-						          <?php }
-						        }else{ ?>
-						          <li><?php _e('There is no answers','autogov'); ?></li>
-						        <?php } ?>
-						      </ul>
-						    </div>
+							<div class="col col-lg-6 mb-3">
+		            <div class="card">
+		            	<div class="card-body">
+		            	<h4 class="card-title"><?php echo __('Votography','autogov')?> <strong><?php echo date_i18n( get_option( 'date_format' ), strtotime($v['_date_votography'])); ?></strong></h4>
+		            	<p class="card-text">
+										<?php echo __('Participantes','autogov')?> : <strong><?php echo ($v['_users_voted']-1); ?></strong>, <?php echo __('Quorum','autogov')?> : <strong><?php echo ($v['_quorum_votography']).'%'; ?></strong>
+									</p>
+			            <table class="table table-hover table-sm table-bordered my-3">
+			              <thead class="thead-dark">
+				              <tr>
+				                <th scope="col"><?php _e('Answers','autogov'); ?></th>
+				                <th scope="col text-center"><?php _e('Votes','autogov'); ?></th>
+				              </tr>
+				            </thead>
+										<tbody>
+		                  <?php
+		                  if(!empty($v['_answers_on_votography'])){
+		                    foreach($v['_answers_on_votography'] as $a) { ?>
+		                      <tr>
+		                        <td scope="row"><?php echo $a->post_title ?></td>
+		                        <td class="text-center"><?php echo $v['_answers_voted'][$a->ID] ?></td>
+													</tr>
+		                    <?php }
+		                  }else{ ?>
+		                    <tr>
+		                      <td><?php _e('There is no answers','autogov'); ?></td>
+		                    </tr>
+		                  <?php } ?>
+			                </tbody>
+										</table>
+		              </div>
+	              </div>
+	            </div>
 						    <?php
 						  }
 						}else{?>
