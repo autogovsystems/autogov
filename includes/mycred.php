@@ -42,6 +42,11 @@ function register_my_custom_hook( $installed )
 						'log'           => '%plural% for product purchased',
 						'limit'         => '0/x'
 					),
+          'product_sold' => array(
+						'creds'         => 1,
+						'log'           => '%plural% for product sold',
+						'limit'         => '0/x'
+					),
 					'add_favorite'   => array(
 						'creds'         => 1,
 						'log'           => '%plural% for adding an activity to favorites',
@@ -68,6 +73,9 @@ function register_my_custom_hook( $installed )
 
 			if ( $this->prefs['product_purchased']['creds'] != 0 )
 				add_action( 'woocommerce_order_status_completed', array( $this, 'product_purchased' ), 10, 2 );
+
+      if ( $this->prefs['product_sold']['creds'] != 0 )
+				add_action( 'woocommerce_order_status_completed', array( $this, 'product_sold' ), 10, 2 );
 
 			if ( $this->prefs['add_favorite']['creds'] != 0 )
 				add_action( 'bp_activity_add_user_favorite', array( $this, 'add_to_favorites' ), 10, 2 );
@@ -127,9 +135,46 @@ function register_my_custom_hook( $installed )
   			// Execute
   			$this->core->add_creds(
   				'product_purchased',
-  				$user_id,
+  				$customer_id,
   				$this->prefs['product_purchased']['creds'],
   				$this->prefs['product_purchased']['log'],
+  				$order_id,
+  				$item_id,
+  				$this->mycred_type
+  			);
+
+      }
+
+		}
+
+    public function product_sold( $order_id ) {
+
+      $order = wc_get_order($order_id);
+      $items = $order->get_items();
+      $customer_id = $order->get_customer_id();
+
+      foreach($items as $item){
+        $item_id = $item->get_product_id();
+        $post_obj = get_post( $item_id ); // The WP_Post object
+        $user_id = $post_obj->post_author; //
+
+        if($customer_id == $user_id) continue;
+
+        // Check if user is excluded
+  			if ( $this->core->exclude_user( $user_id ) ) continue;
+
+  			// Limit
+  			if ( $this->over_hook_limit( 'product_sold', $order_id, $item_id ) ) continue;
+
+        // Make sure this is unique event
+        if ( $this->core->has_entry( 'product_sold', $order_id, $item_id ) ) continue;
+
+  			// Execute
+  			$this->core->add_creds(
+  				'product_sold',
+  				$user_id,
+  				$this->prefs['product_sold']['creds'],
+  				$this->prefs['product_sold']['log'],
   				$order_id,
   				$item_id,
   				$this->mycred_type
@@ -258,6 +303,30 @@ function register_my_custom_hook( $installed )
 			</div>
 		</div>
 	</div>
+
+  <h3><?php _e( 'Product sold', 'mycred' ); ?></h3>
+  <div class="row">
+		<div class="col-lg-2 col-md-6 col-sm-12 col-xs-12">
+			<div class="form-group">
+				<label for="<?php echo $this->field_id( array( 'product_sold', 'creds' ) ); ?>"><?php echo $this->core->plural(); ?></label>
+				<input type="text" name="<?php echo $this->field_name( array( 'product_sold', 'creds' ) ); ?>" id="<?php echo $this->field_id( array( 'product_sold', 'creds' ) ); ?>" value="<?php echo $this->core->number( $prefs['product_sold']['creds'] ); ?>" class="form-control" />
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+			<div class="form-group">
+				<label for="<?php echo $this->field_id( array( 'product_sold', 'limit' ) ); ?>"><?php _e( 'Limit', 'mycred' ); ?></label>
+				<?php echo $this->hook_limit_setting( $this->field_name( array( 'product_sold', 'limit' ) ), $this->field_id( array( 'product_sold', 'limit' ) ), $prefs['product_sold']['limit'] ); ?>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<div class="form-group">
+				<label for="<?php echo $this->field_id( array( 'removed_update', 'log' ) ); ?>"><?php _e( 'Log template', 'mycred' ); ?></label>
+				<input type="text" name="<?php echo $this->field_name( array( 'removed_update', 'log' ) ); ?>" id="<?php echo $this->field_id( array( 'removed_update', 'log' ) ); ?>" placeholder="<?php _e( 'required', 'mycred' ); ?>" value="<?php echo esc_attr( $prefs['removed_update']['log'] ); ?>" class="form-control" />
+				<span class="description"><?php echo $this->available_template_tags( array( 'general' ) ); ?></span>
+			</div>
+		</div>
+	</div>
+
 </div>
 
 <div class="hook-instance">

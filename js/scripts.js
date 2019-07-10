@@ -1,8 +1,9 @@
 var flickityoptions = {	freeScroll: true,
 	contain: true,
 	imagesLoaded: true,
-	prevNextButtons: false,
-	pageDots: false};
+	prevNextButtons: true,
+	pageDots: false,
+	groupCells: true};
 
 (function ($, root, undefined) {
 
