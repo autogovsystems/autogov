@@ -145,7 +145,7 @@ add_action( 'init', 'question_custom_posttype' );
 
 /* Añadimos preguntas a question*/
 add_action( 'edit_form_after_editor', 'no_metabox_question' );
-add_action( 'save_post', 'save_question', 10, 2 );
+add_action( 'save_post', 'save_question', 10, 3 );
 
 function no_metabox_question()
 {
@@ -369,7 +369,7 @@ function resolution_parent_callback($post){
 
 
 /** Save question */
-function save_question( $post_id, $post_object ){
+function save_question( $post_id, $post_object, $update ){
     if( !isset( $post_object->post_type ) || 'question' != $post_object->post_type )
         return;
 
@@ -420,6 +420,13 @@ function save_question( $post_id, $post_object ){
     }else{
         delete_post_meta( $post_id, '_related_resolutions' );
     }
+
+    $id_tolog = 'vontest_new';
+    if($update){
+      $id_tolog = 'vontest_update';
+    }
+    add_to_agovlogger($id_tolog,get_current_user_id(),$post_object);
+
 }
 
 
@@ -449,8 +456,8 @@ function answer_parent_callback($post){
 }
 
 /** Save answer */
-add_action( 'save_post', 'save_answer', 10, 2 );
-function save_answer( $post_id, $post_object ){
+add_action( 'save_post', 'save_answer', 10, 3 );
+function save_answer( $post_id, $post_object, $update ){
     if( !isset( $post_object->post_type ) || 'answer' != $post_object->post_type )
         return;
 
@@ -465,6 +472,13 @@ function save_answer( $post_id, $post_object ){
     }else{
       delete_post_meta( $post_id, '_question_parent' );
     }
+
+    $id_tolog = 'answer_new';
+    if($update){
+      $id_tolog = 'answer_update';
+    }
+    add_to_agovlogger($id_tolog,get_current_user_id(),$post_object);
+
 }
 
 /** Save resolution */
@@ -486,11 +500,19 @@ function save_resolution( $post_id, $post_object ){
     }
 }
 
-add_action( 'init', 'remove_comments_plugin_template',99999 );
+add_action( 'plugins_loaded', 'remove_comments_plugin_template',99999 );
 function remove_comments_plugin_template(){
   if(class_exists('CommentPopularity/HMN_Comment_Popularity')){
     remove_filter( 'comments_template', array( CommentPopularity\HMN_Comment_Popularity::get_instance(), 'custom_comments_template' ) );
   }
+}
+add_filter('comments_template','comments_template_for_answer');
+function comments_template_for_answer(){
+  global $post;
+  if($post->post_type == 'answer'){
+    return '/comments-amswer.php';
+  }
+  return '/comments.php';
 }
 
 /* COMMENTS ON QUESTION */
@@ -524,6 +546,28 @@ function add_comment_meta_settings($comment_id) {
   }else{
     add_comment_meta($comment_id,'_comment_type', get_comment_meta($_POST['comment_parent'],'_comment_type',true), true);
   }
+
+  $comment_obj = get_comment($comment_id); //Get comment object
+  $comment_post = get_post($comment_obj->comment_post_ID); //Get post object
+
+
+  if(isset($comment_post->post_type)){
+    switch($comment_post->post_type){
+      case 'question':
+        $id_tolog = 'vontest_new_comment';
+        break;
+      case 'answer':
+        $id_tolog = 'answer_new_comment';
+        break;
+      case 'product':
+        $id_tolog = 'product_new_comment';
+      default:
+        $id_to_log = 'post_new_comment';
+    }
+  }
+
+  add_to_agovlogger($id_tolog,get_current_user_id(),$comment_obj);
+
 }
 
 function create_vontest() {
@@ -561,9 +605,12 @@ function create_vontest() {
     foreach ( $metas as $meta_key => $meta_value ) {
       update_post_meta( $_POST['vontest_id'], $meta_key, $meta_value );
     }
+    add_to_agovlogger('vontest_update',get_current_user_id(),$_POST['vontest_id']);
   }
-  else
+  else{
     $post_id = wp_insert_post($post);
+    add_to_agovlogger('vontest_new',get_current_user_id(),$post_id);
+  }
 
   if(isset($_FILES["vontest_featuredimage"]) && $_FILES["vontest_featuredimage"]!='')
     upload_vontest_image($post_id);
@@ -599,6 +646,8 @@ function create_answer() {
     );
     $new_post_id = wp_insert_post($post);
     upload_vontest_image($new_post_id);
+    $id_tolog = 'answer_new';
+    add_to_agovlogger($id_tolog,get_current_user_id(),$new_post_id);
   }
   else
     exit;
@@ -634,6 +683,8 @@ function vote_answer() {
     if ( ! $count ) { $count = 0; }
     $count = $count + $_POST["vote_value"];
     update_post_meta( $_POST["answer_id"], '_votes', $count);
+
+    add_to_agovlogger('answer_voted',get_current_user_id(),array('answer_id'=>$_POST["answer_id"],'votes' => $count));
 }
 add_action('wp_ajax_vote_answer', 'vote_answer');
 
@@ -646,7 +697,7 @@ function get_disposable_points($vontest_id,$current_answer_id)
   $vontest=new Vontest($vontest_id);
 
   foreach($vontest->answer_ids as $answer_id){
-    $sum+=get_user_meta(get_current_user_id(), 'answer_'.$answer_id, true);
+    $sum+=(int)get_user_meta(get_current_user_id(), 'answer_'.$answer_id, true);
   }
 
   $remaining_vontest_user_points = $max_points_user_vontest - $sum + $current_answer_points;

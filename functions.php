@@ -694,9 +694,14 @@ require_once('includes/mycred.php');
 //dokan
 require_once('includes/dokan.php');
 
+//agovlogger
+require_once('includes/logger.php');
+
+//statistics
+require_once('includes/statistics.php');
+
 //cron
 require_once('includes/cron.php');
-
 
 //tgm plugin activation
 require_once('includes/tgm.php');
