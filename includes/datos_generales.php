@@ -10,7 +10,7 @@ function datos_generales() {
 }
 
 function render_menu() {
-    $fieldstosave = array('public_community','open_register','max_points_user_vontest','max_points_user_answer','logo_comunidad','politics_enabled','economy_enabled','social_enabled');
+    $fieldstosave = array('public_community','open_register','max_points_user_vontest','max_points_user_answer','logo_comunidad','politics_enabled','economy_enabled','social_enabled','allow_log_votes');
     if(isset($_POST['save']) && $_POST['save']){
       foreach($fieldstosave as $f){
         if(isset($_POST[$f])){
@@ -55,6 +55,10 @@ function render_menu() {
                   <tr>
                     <th><label for="social_enabled"> <?php _e('Habilitar social','autogov'); ?> </label> </th>
                     <td> <input type="checkbox" name="social_enabled" value="1" <?php checked(1, get_option('social_enabled'), true);?>/>   </td>
+                  </tr>
+                  <tr>
+                      <th><label for="allow_log_votes"><?php _e('Log votes','autogov'); ?></label><span></span></th>
+                      <td><input type="checkbox" name="allow_log_votes" value="1" <?php checked(1, get_option('allow_log_votes'), true); ?> /> </td>
                   </tr>
                   <tr>
                       <th><label for="max_points_user_vontest"><?php _e('Maximum user points in each vontest (can not be modified if there is any active vontest)','autogov'); ?></label></th>

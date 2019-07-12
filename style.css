@@ -752,6 +752,20 @@ background-color: #eee !important;
 	color: #000 !important;
 }
 
+/* LOG PAGINATION */
+.agovlog_pag_loading { min-height: 100px; }
+.agovlog_pag_loading table { margin-bottom: 0; }
+ul.pagination { margin: 0; padding: 0.5em; border: 1px solid #e6e6e6; justify-content: center; }
+ul.pagination li {display: inline; margin: 3px; padding: 4px 8px; color: #444; }
+ul.pagination li.active:hover {  }
+ul.pagination li.inactive { }
+ul.pagination li.selected { border-bottom: 1px solid #444; }
+ul.pagination li span { opacity: 0.2; }
+ul.pagination li span.current { opacity: 1; }
+
+.mycred-history-wrapper ul.pagination li.active { border-bottom: 1px solid #444; }
+.agovlog-pagination-nav li.active { cursor: pointer; }
+.agovlog-pagination-nav li.active:hover { background-color: #e6e6e6; }
 
 /*404*/
 .image-not-found {display:block; border-radius: 20px; width:100%; margin:20px auto;}

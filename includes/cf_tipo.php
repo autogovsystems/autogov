@@ -4,7 +4,8 @@ add_action( 'woocommerce_product_options_general_product_data', 'tipo_woo'); //c
 add_action( 'woocommerce_process_product_meta', 'tipo_woo_save'); // guardado de meta de tipo
 add_action( 'dokan_new_product_added', 'save_dokan_product_type', 10, 2); //guardado meta de tipo al crear producto vía dokan
 add_action( 'dokan_product_updated', 'save_dokan_product_type', 10, 2); //guardado meta de tipo al editar producto vía dokan
-
+add_action( 'dokan_new_product_added', 'log_product_new', 10, 2); //guardado meta de tipo al crear producto vía dokan
+add_action( 'dokan_product_updated', 'log_product_updated', 10, 2); //guardado meta de tipo al editar producto vía dokan
 
 /*metabox para tipo: servicio, producto o evento*/
 function tipo_woo(){
@@ -56,4 +57,11 @@ function save_dokan_product_type($product_id, $data)
       }
     }
 
+}
+
+function log_product_new($product_id, $data){
+  add_to_agovlogger('product_new',get_current_user_id(),$product_id);
+}
+function log_product_updated($product_id, $data){
+  add_to_agovlogger('product_updated',get_current_user_id(),$product_id);
 }

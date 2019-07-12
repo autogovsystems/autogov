@@ -5,11 +5,13 @@
 				<div class="container-fluid">
 					<div class="row">
 					<!-- copyright -->
-					<p class="copyright col">
+					<div class="copyright col-10">
 						<?php bloginfo('name'); ?>
-					</p>
+					</div>
 					<!-- /copyright -->
-
+					<div class="col-2">
+						<?php echo do_shortcode('[gtranslate]'); ?>
+					</div>
 					</div>
 				</div>
 			</footer>
