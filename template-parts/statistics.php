@@ -44,7 +44,7 @@
   <div class="col-12 col-md-3 mb-4">
     <?php
       global $wpdb;
-      $totalvotes = $wpdb->get_var($wpdb->prepare("SELECT SUM(meta_value) AS votes FROM wp_usermeta WHERE meta_key LIKE 'answer_%'",ARRAY_A));
+      $totalvotes = $wpdb->get_var($wpdb->prepare("SELECT SUM(meta_value) AS votes FROM ".$wpdb->prefix."usermeta WHERE meta_key LIKE 'answer_%'",ARRAY_A));
       print_card_statistics(array('title'=>__('Votes given'),'number'=>$totalvotes,'icon'=>'vote-yea')); ?>
   </div>
   <div class="col-12 col-md-6 mb-4">
