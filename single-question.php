@@ -300,7 +300,7 @@
 					</div>
 					<div class="col-12 pt-3 pb-3 border-top">
 						<p><?php _e('History of this Vontest','autogov'); ?></p>
-						<div><?php $votographies = get_post_meta(get_the_ID(), '_votographies', true);
+						<div class="row"><?php $votographies = get_post_meta(get_the_ID(), '_votographies', true);
 						if($votographies){
 					  foreach($votographies as $v){ ?>
 							<div class="col col-lg-6 mb-3">
