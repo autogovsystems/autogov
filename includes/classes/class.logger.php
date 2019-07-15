@@ -30,7 +30,7 @@ class AGOVLogger {
   function __construct(){
     global $wpdb;
     $this->table_name = $wpdb->prefix.'agovlogger';
-    $this->per_page = 25;
+    $this->per_page = 20;
   }
 
   function create_table(){

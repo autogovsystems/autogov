@@ -4,7 +4,7 @@
             // This is required for AJAX to work on our page
             var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
             function load_all_log(page){
-                $(".agovlog_pag_loading").fadeIn().css('background','#ccc');
+                $(".agovlog_pag_loading").addClass('loading');
 
                 var data = {
                     page: page,
@@ -13,7 +13,7 @@
 
                 $.post(ajaxurl, data, function(response) {
                     $(".agovlog_universal_container").html(response);
-                    $(".agovlog_pag_loading").css({'background':'none', 'transition':'all 1s ease-out'});
+                    $(".agovlog_pag_loading").removeClass('loading');
                 });
             }
 
@@ -28,6 +28,7 @@
         });
         </script>
         <div class="agovlog_pag_loading">
+            <i class="fas fa-circle-notch fa-spin"></i>
             <div class="agovlog_universal_container">
                 <div class="agovlog-universal-content"></div>
             </div>

@@ -214,7 +214,7 @@ function html5blank_styles()
     wp_register_style('flickity', get_template_directory_uri() . '/vendor/flickity/flickity.min.css', array(), '1.0', 'all');
     wp_enqueue_style('flickity'); // Enqueue it!
 
-    wp_register_style('fontawesome', 'https://use.fontawesome.com/releases/v5.4.1/css/all.css', array(), '1.0', 'all');
+    wp_register_style('fontawesome', 'https://use.fontawesome.com/releases/v5.9.0/css/all.css', array(), '1.0', 'all');
     wp_enqueue_style('fontawesome'); // Enqueue it!
 
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');

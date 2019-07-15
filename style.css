@@ -753,7 +753,11 @@ background-color: #eee !important;
 }
 
 /* LOG PAGINATION */
-.agovlog_pag_loading { min-height: 100px; }
+.agovlog_pag_loading { min-height: 100px; position: relative; margin-bottom: 1em; }
+.agovlog_pag_loading:before { content:''; position: absolute; top:0; left:0; width: 100%; height: 0%; background-color: #FFF; opacity: 0; transition: all ease 0.5s;  }
+.agovlog_pag_loading.loading:before { opacity: 0.8; height: 100%; }
+.agovlog_pag_loading i.fas { display: none; }
+.agovlog_pag_loading.loading i.fas { display: block; position: absolute; top:50%; left:50%; transform: translate(-50%,-50%);  }
 .agovlog_pag_loading table { margin-bottom: 0; }
 ul.pagination { margin: 0; padding: 0.5em; border: 1px solid #e6e6e6; justify-content: center; }
 ul.pagination li {display: inline; margin: 3px; padding: 4px 8px; color: #444; }
@@ -763,6 +767,9 @@ ul.pagination li.selected { border-bottom: 1px solid #444; }
 ul.pagination li span { opacity: 0.2; }
 ul.pagination li span.current { opacity: 1; }
 
+.mycred-history-wrapper form.form-inline { display: block;}
+.mycred-history-wrapper form.form-inline .col-xs-12 { -ms-flex: 0 0 100%; flex: 0 0 100%; max-width: 100%;}
+.mycred-history-wrapper form.form-inline > .row { margin: auto; }
 .mycred-history-wrapper ul.pagination li.active { border-bottom: 1px solid #444; }
 .agovlog-pagination-nav li.active { cursor: pointer; }
 .agovlog-pagination-nav li.active:hover { background-color: #e6e6e6; }
