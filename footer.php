@@ -31,11 +31,6 @@
 		ga('send', 'pageview');
 		</script>
 
-		<script type="text/javascript">
-if (window.location.href=="https://autogov.systems/es/presentacion/") {
-document.getElementById("gtranslate_wrapper").style.display = "none";
-}
-</script>
 
 	</body>
 </html>
