@@ -32,10 +32,10 @@ function log_registration_save( $user_id ) {
   add_to_agovlogger('user_register',$user_id);
 }
 
-add_action( 'wp_login', 'log_login_save', 10, 2 );
-function log_login_save( $user_id, $user ) {
-  add_to_agovlogger('user_login',$user->ID);
-}
+//add_action( 'wp_login', 'log_login_save', 10, 2 );
+//function log_login_save( $user_id, $user ) {
+  //add_to_agovlogger('user_login',$user->ID);
+//}
 
 add_action( 'groups_group_create_complete', 'log_group_create' );
 function log_group_create($group_id){
@@ -45,7 +45,7 @@ function log_group_create($group_id){
 add_action( 'bp_activity_add', 'log_bp_activity' );
 function log_bp_activity($r){
   if($r['type']=='created_group'){return;}
-  $idtolog = 'activity_new';
+    $idtolog = 'activity_new';
   if($r['component'] == 'groups'){
     $idtolog = 'activity_group_new';
   }

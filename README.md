@@ -92,3 +92,4 @@ Be free for add plugin and if you feel that you install some that makes Autogov 
 - Economy page is the woocommerce shop page. (woocommerce/archive-product.php)
 - Social page is the Buddypress activity page (buddypress/activity/index.php)
 - Common templates are on template-parts folder
+- For log events you must use the function add_to_agovlogger($action,$user_id,$meta_data = '')

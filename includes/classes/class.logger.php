@@ -52,7 +52,7 @@ class AGOVLogger {
     global $wpdb;
     $date = date("Y-m-d H:i:s");
     if(gettype($meta_data) == 'array' || gettype($meta_data) == 'object'){
-      $meta_data = json_encode($meta_data);
+      $meta_data = json_encode($meta_data,JSON_UNESCAPED_UNICODE);
     }
     $wpdb->query("INSERT INTO $this->table_name (date_created, action, user_id,meta_data) VALUES ('$date', '$action', '$user_id', '$meta_data')"  );
   }
@@ -149,7 +149,7 @@ class AGOVLogger {
     // Set default variables
     $msg = '';
     if(isset($_POST['page'])){
-
+        $start = ($_POST['page']-1) * $this->per_page;
         if(get_option('allow_log_votes') == 1){
           $all_log_posts = $wpdb->get_results($wpdb->prepare("
             SELECT * FROM " . $this->table_name . " ORDER BY date_created DESC LIMIT %d, %d", $start, $this->per_page ) );
@@ -202,33 +202,33 @@ class AGOVLogger {
     $msg = '';
     switch($post->action){
       case 'vontest_new':
-        $msg = sprintf('Vontest created "%s"',get_the_title($post->meta_data));
+        $msg = sprintf('Vontest created <a href="%s">"%s"</a>',get_the_permalink($post->meta_data),get_the_title($post->meta_data));
       break;
       case 'vontest_update':
-        $msg = sprintf('Vontest updated "%s"',get_the_title($post->meta_data));
+        $msg = sprintf('Vontest updated <a href="%s">"%s"</a>',get_the_permalink($post->meta_data),get_the_title($post->meta_data));
       break;
       case 'answer_new':
-        $msg = sprintf('Answer created "%s"',get_the_title($post->meta_data));
+        $msg = sprintf('Answer created <a href="%s">"%s"</a>',get_the_permalink($post->meta_data),get_the_title($post->meta_data));
       break;
       case 'answer_update':
-        $msg = sprintf('Answer updated "%s"',get_the_title($post->meta_data));
+        $msg = sprintf('Answer updated <a href="%s">"%s"</a>',get_the_permalink($post->meta_data),get_the_title($post->meta_data));
       break;
       case 'vontest_new_comment':
         $metadata = json_decode($post->meta_data);
-        $msg = sprintf('Vontest comment created for "%s"',get_the_title($metadata->comment_post_ID));
+        $msg = sprintf('Vontest comment created for <a href="%s">"%s"</a>',get_the_permalink($post->comment_post_ID),get_the_title($metadata->comment_post_ID));
       break;
       case 'answer_new_comment':
         $metadata = json_decode($post->meta_data);
-        $msg = sprintf('Answer comment created for "%s"',get_the_title($metadata->comment_post_ID));
+        $msg = sprintf('Answer comment created for <a href="%s">"%s"</a>',get_the_permalink($post->comment_post_ID),get_the_title($metadata->comment_post_ID));
       break;
       case 'product_new':
-        $msg = sprintf('Product created "%s"',get_the_title($post->meta_data));
+        $msg = sprintf('Product created <a href="%s">"%s"</a>',get_the_permalink($post->meta_data),get_the_title($post->meta_data));
       break;
       case 'product_updated':
-        $msg = sprintf('Product updated "%s"',get_the_title($post->meta_data));
+        $msg = sprintf('Product updated <a href="%s">"%s"</a>',get_the_permalink($post->meta_data),get_the_title($post->meta_data));
       break;
       case 'product_purchase':
-        $msg = sprintf('Product purchased "%s"',get_the_title($post->meta_data));
+        $msg = sprintf('Product purchased <a href="%s">"%s"</a>',get_the_permalink($post->meta_data),get_the_title($post->meta_data));
       break;
       case 'voins_payment':
         $msg = sprintf('Voins payment via commerce','');
@@ -239,16 +239,23 @@ class AGOVLogger {
       break;
       case 'product_new_comment':
         $metadata = json_decode($post->meta_data);
-        $msg = sprintf('Product comment created for "%s"',get_the_title($metadata->comment_post_ID));
+        $msg = sprintf('Product comment created for <a href="">"%s"</a>',get_the_permalink($metadata->comment_post_ID),get_the_title($metadata->comment_post_ID));
       break;
       case 'group_new':
-        $msg = sprintf('Group created "%s"',bp_get_group_name( groups_get_group($post->meta_data)));
+        $group = groups_get_group($post->meta_data);
+        $msg = sprintf('Group created <a href="%s">"%s"</a>',bp_get_group_permalink($group),bp_get_group_name($group));
       break;
       case 'activity_new':
         $metadata = json_decode($post->meta_data);
-        $msg = 'Social activity: '.$metadata->type;
+        $link = $metadata->primary_link;
+        if($link == ''){
+          $link = bp_core_get_user_domain( $metadata->user_id );
+        }
+        $msg = 'Social activity: <a href="'.$link.'">'.$metadata->type.'</a>';
         if(!empty($metadata->action)){
           $msg .= '<br />'.stripslashes($metadata->action);
+        }else{
+
         }
         if(!empty($metadata->content)){
           $msg .= '<br />"'.stripslashes($metadata->content).'"';
@@ -272,7 +279,7 @@ class AGOVLogger {
       break;
       case 'answer_voted':
         $metadata = json_decode($post->meta_data);
-        $msg = sprintf('Answer voted "%s" with %s votes ',get_the_title($metadata->answer_id),$metadata->votes);
+        $msg = sprintf('Answer voted <a href="%s">"%s"</a> with %s votes ',get_the_permalink($metadata->answer_id),get_the_title($metadata->answer_id),$metadata->votes);
       break;
     }
     return $msg;

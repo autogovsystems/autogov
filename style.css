@@ -767,6 +767,8 @@ ul.pagination li.selected { border-bottom: 1px solid #444; }
 ul.pagination li span { opacity: 0.2; }
 ul.pagination li span.current { opacity: 1; }
 
+.agovlog-universal-content a { text-decoration: underline; }
+
 .mycred-history-wrapper form.form-inline { display: block;}
 .mycred-history-wrapper form.form-inline .col-xs-12 { -ms-flex: 0 0 100%; flex: 0 0 100%; max-width: 100%;}
 .mycred-history-wrapper form.form-inline > .row { margin: auto; }
