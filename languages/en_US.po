@@ -1,18 +1,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: HTML5 Blank WordPress Theme\n"
-"POT-Creation-Date: 2019-05-21 12:19+0200\n"
+"POT-Creation-Date: 2019-10-07 17:20+0200\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Fabián Núñez <fanuneza@gmail.com>\n"
+"Last-Translator: \n"
 "Language-Team: Ioan Virag | www.ioanvirag.com <ioan@ioanvirag.com>\n"
-"Language: es_ES\n"
+"Language: en_150\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
@@ -25,7 +26,6 @@ msgid "Return home?"
 msgstr "Return home?"
 
 #: ../archive.php:10
-#| msgid "Tags: "
 msgid "Tags for"
 msgstr "Tags for"
 
@@ -42,25 +42,26 @@ msgstr "About "
 msgid "Published by"
 msgstr "Published by"
 
-#: ../author.php:43 ../loop-search.php:24 ../loop.php:24
-#: ../single-question.php:84 ../single.php:32 ../taxonomy-topics.php:61
+#: ../author.php:43 ../loop-search.php:24 ../loop.php:24 ../single.php:32
+#: ../taxonomy-topics.php:61
 msgid "Leave your thoughts"
 msgstr "Leave your thoughts"
 
-#: ../author.php:43 ../loop-search.php:24 ../loop.php:24
-#: ../single-question.php:84 ../single.php:32 ../taxonomy-topics.php:61
+#: ../author.php:43 ../loop-search.php:24 ../loop.php:24 ../single.php:32
+#: ../taxonomy-topics.php:61
 msgid "1 Comment"
 msgstr "1 Comment"
 
-#: ../author.php:43 ../loop-search.php:24 ../loop.php:24
-#: ../single-question.php:84 ../single.php:32 ../taxonomy-topics.php:61
+#: ../author.php:43 ../loop-search.php:24 ../loop.php:24 ../single.php:32
+#: ../taxonomy-topics.php:61
 msgid "% Comments"
 msgstr "% Comments"
 
 #: ../author.php:63 ../loop-search.php:43 ../loop.php:43 ../page.php:44
-#: ../single-answer.php:70 ../single-question.php:362
-#: ../single-resolution.php:93 ../single.php:58 ../taxonomy-topics.php:79
-#: ../template-demo.php:34 ../template-frontpage.php:37
+#: ../single-aboutcommunity.php:33 ../single-answer.php:70
+#: ../single-question.php:385 ../single-resolution.php:96 ../single.php:58
+#: ../taxonomy-topics.php:79 ../template-demo.php:34
+#: ../template-frontpage.php:37
 msgid "Sorry, nothing to display."
 msgstr "Sorry, nothing to display."
 
@@ -205,7 +206,6 @@ msgstr "View Conversation"
 
 #: ../buddypress/activity/entry.php:68
 #, php-format
-#| msgid "% Comments"
 msgid "Comment %s"
 msgstr "Comment %s"
 
@@ -218,7 +218,6 @@ msgid "Remove Favorite"
 msgstr "Remove Favorite"
 
 #: ../buddypress/activity/entry.php:126
-#| msgid "1 Comment"
 msgid "Comment"
 msgstr "Comment"
 
@@ -461,23 +460,36 @@ msgstr "Show:"
 msgid "&mdash; Everything &mdash;"
 msgstr "&mdash; Everything &mdash;"
 
+#: ../buddypress/groups/single/cover-image-header.php:56
 #: ../buddypress/groups/single/group-header.php:48
 #: ../buddypress/groups/single/members.php:33
 msgid "Members"
 msgstr "Members"
 
+#: ../buddypress/groups/single/cover-image-header.php:59
+#, php-format
+msgid "active %s"
+msgstr "active %s"
+
+#: ../buddypress/groups/single/cover-image-header.php:80
+msgid "Group Admins"
+msgstr "Group Admins"
+
+#: ../buddypress/groups/single/cover-image-header.php:100
+msgid "Group Mods"
+msgstr "Group Mods"
+
 #: ../buddypress/groups/single/members.php:110
 msgid "No members were found."
 msgstr "No members were found."
 
-#: ../buddypress/members/single/cover-image-header.php:38
+#: ../buddypress/members/single/cover-image-header.php:46
 #: ../buddypress/members/single/member-header.php:49
-#: ../template-parts/my-social-card.php:100
+#: ../template-parts/my-social-card.php:107
 msgid "Current Applauds:"
 msgstr "Current Applauds:"
 
 #: ../category.php:7
-#| msgid "Categories for"
 msgid "Categories for "
 msgstr "Categories for "
 
@@ -491,7 +503,7 @@ msgstr "PRO"
 
 #: ../comments-answer.php:31
 msgid "CONTRA"
-msgstr "CONTRA"
+msgstr "CON"
 
 #: ../comments-answer.php:46 ../comments.php:25
 msgid "Comments are closed here."
@@ -502,12 +514,10 @@ msgid "No comments yet.<br/><strong>Be the first!</strong>"
 msgstr "No comments yet.<br/><strong>Be the first!</strong>"
 
 #: ../comments-answer.php:55 ../comments.php:34
-#| msgid "1 Comment"
 msgid "Post a comment"
 msgstr "Post a comment"
 
 #: ../comments.php:4
-#| msgid "Post is password protected. Enter the password to view any comments."
 msgid ""
 "Post is password protected. <br/><strong>Enter the password to view any "
 "comments</strong>."
@@ -532,8 +542,8 @@ msgstr "Create news questions"
 msgid "General"
 msgstr "General"
 
-#: ../create-vontest.php:28 ../dokan/products/new-product-single.php:434
-#: ../dokan/products/new-product.php:283 ../single-question.php:262
+#: ../create-vontest.php:28 ../dokan/products/new-product-single.php:438
+#: ../dokan/products/new-product.php:287 ../single-question.php:262
 msgid "Description"
 msgstr "Description"
 
@@ -551,11 +561,11 @@ msgstr "Short description"
 
 #: ../create-vontest.php:41
 msgid "Add your vontest short description"
-msgstr "Add your vontest short description"
+msgstr "Add your Vontest’s short description"
 
 #: ../create-vontest.php:42
-msgid "140 char. max"
-msgstr "140 char. max"
+msgid "400 char. max"
+msgstr "400 char. max"
 
 #: ../create-vontest.php:47 ../single-question.php:272
 msgid "Featured image"
@@ -563,81 +573,90 @@ msgstr "Featured image"
 
 #: ../create-vontest.php:48
 msgid "Image for the vontest"
-msgstr "Image for the vontest"
+msgstr "Image for the Vontest"
 
-#: ../create-vontest.php:61
+#: ../create-vontest.php:54
+msgid "If you don't have image. Choose your image from CC and upload"
+msgstr "If you don't have image. Choose your image from CC and upload"
+
+#: ../create-vontest.php:66
 msgid "Votography date"
 msgstr "Votography date"
 
-#: ../create-vontest.php:62
+#: ../create-vontest.php:67
 msgid "Your vontest closingdate date"
-msgstr "Your vontest closingdate date"
+msgstr "Your Vontest’s closing date"
 
-#: ../create-vontest.php:81
+#: ../create-vontest.php:86
 msgid "Add Topics at your vontest"
-msgstr "Add Topics at your vontest"
+msgstr "Add Topics at your Vontest"
 
-#: ../create-vontest.php:88
+#: ../create-vontest.php:93
 msgid "Seleccione topics"
-msgstr "Seleccione topics"
+msgstr "Select Topics"
 
-#: ../create-vontest.php:99
+#: ../create-vontest.php:104
 msgid "Aun no hay topics creados."
-msgstr "Aun no hay topics creados."
+msgstr "No Topics created yet"
 
-#: ../create-vontest.php:113
+#: ../create-vontest.php:118
 msgid "Seleccione tags"
-msgstr "Seleccione tags"
+msgstr "Select Tags"
 
-#: ../create-vontest.php:124
-msgid "Aun no hay tags creados."
-msgstr "Aun no hay tags creados."
+#: ../create-vontest.php:129
+msgid "No tags yet"
+msgstr "No Tags created yet"
 
-#: ../create-vontest.php:131
+#: ../create-vontest.php:132 ../dokan/products/new-product-single.php:358
+#: ../dokan/products/new-product.php:279
+msgid "Don't see your perfect tag? Click here"
+msgstr "Don't see the perfect Tag? Click here to add one"
+
+#: ../create-vontest.php:140
 msgid "RELATED RESOLUTIONS"
 msgstr "RELATED RESOLUTIONS"
 
-#: ../create-vontest.php:171 ../single-question.php:106
+#: ../create-vontest.php:180 ../single-question.php:106
 #: ../single-question.php:128
 msgid "What"
 msgstr "What"
 
-#: ../create-vontest.php:184 ../single-question.php:109
+#: ../create-vontest.php:193 ../single-question.php:109
 #: ../single-question.php:134
 msgid "How"
 msgstr "How"
 
-#: ../create-vontest.php:197 ../single-question.php:112
+#: ../create-vontest.php:206 ../single-question.php:112
 #: ../single-question.php:140
 msgid "When"
 msgstr "When"
 
-#: ../create-vontest.php:210 ../single-question.php:115
+#: ../create-vontest.php:219 ../single-question.php:115
 #: ../single-question.php:146
 msgid "Where"
 msgstr "Where"
 
-#: ../create-vontest.php:223 ../single-question.php:118
+#: ../create-vontest.php:232 ../single-question.php:118
 #: ../single-question.php:152
 msgid "Why"
 msgstr "Why"
 
-#: ../create-vontest.php:236 ../single-question.php:121
+#: ../create-vontest.php:245 ../single-question.php:121
 #: ../single-question.php:158
 msgid "How much"
 msgstr "How much"
 
-#: ../create-vontest.php:252
+#: ../create-vontest.php:261
 msgid "SAVE CHANGES"
 msgstr "SAVE CHANGES"
 
-#: ../create-vontest.php:254
+#: ../create-vontest.php:263
 msgid "PUBLISH NEW VONTEST"
 msgstr "PUBLISH NEW VONTEST"
 
-#: ../create-vontest.php:269
+#: ../create-vontest.php:278
 msgid "Debe estar identificado para poder crear vontest"
-msgstr "Must be identified in order to create vontest"
+msgstr "You must be logged in to create a new Contest"
 
 #: ../dokan/global/seller-registration-form.php:13
 msgid "First Name"
@@ -662,7 +681,7 @@ msgstr ""
 
 #: ../dokan/global/seller-registration-form.php:53
 msgid "I am a vendor"
-msgstr "I am a vendor"
+msgstr "I am a Vendor"
 
 #: ../dokan/products/new-product-single.php:8
 msgid "Access Denied, No product found"
@@ -796,7 +815,6 @@ msgstr "To"
 
 #: ../dokan/products/new-product-single.php:265
 #: ../dokan/products/new-product-single.php:298
-#| msgid "Categories for"
 msgid "Category"
 msgstr "Category"
 
@@ -840,7 +858,6 @@ msgstr "Event"
 
 #: ../dokan/products/new-product-single.php:334 ../single-question.php:58
 #: ../template-parts/main-politics.php:22 ../template-parts/main-shop.php:23
-#| msgid "Tags: "
 msgid "Tags"
 msgstr "Tags"
 
@@ -850,107 +867,106 @@ msgstr "Tags"
 msgid "Select product tags"
 msgstr "Select product tags"
 
-#: ../dokan/products/new-product-single.php:379
+#: ../dokan/products/new-product-single.php:383
 #: ../dokan/products/tmpl-add-product-popup.php:18
 msgid "Upload a product cover image"
 msgstr "Upload a product cover image"
 
-#: ../dokan/products/new-product-single.php:416
+#: ../dokan/products/new-product-single.php:420
 #: ../dokan/products/new-product.php:129
 #: ../dokan/products/tmpl-add-product-popup.php:32
 msgid "Add gallery image"
 msgstr "Add gallery image"
 
-#: ../dokan/products/new-product-single.php:429
+#: ../dokan/products/new-product-single.php:433
 msgid "Short Description"
 msgstr "Short Description"
 
-#: ../dokan/products/new-product-single.php:443
+#: ../dokan/products/new-product-single.php:447
 msgid "Inventory"
 msgstr "Inventory"
 
-#: ../dokan/products/new-product-single.php:444
+#: ../dokan/products/new-product-single.php:448
 msgid "Manage inventory for this product."
 msgstr "Manage inventory for this product."
 
-#: ../dokan/products/new-product-single.php:454
+#: ../dokan/products/new-product-single.php:458
 msgid "SKU"
 msgstr "SKU"
 
-#: ../dokan/products/new-product-single.php:454
+#: ../dokan/products/new-product-single.php:458
 msgid "(Stock Keeping Unit)"
 msgstr "(Stock Keeping Unit)"
 
-#: ../dokan/products/new-product-single.php:459
+#: ../dokan/products/new-product-single.php:463
 msgid "Stock Status"
 msgstr "Stock Status"
 
-#: ../dokan/products/new-product-single.php:462
+#: ../dokan/products/new-product-single.php:466
 msgid "In Stock"
 msgstr "In Stock"
 
-#: ../dokan/products/new-product-single.php:463
+#: ../dokan/products/new-product-single.php:467
 msgid "Out of Stock"
 msgstr "Out of Stock"
 
-#: ../dokan/products/new-product-single.php:470
+#: ../dokan/products/new-product-single.php:474
 msgid "Enable product stock management"
 msgstr "Enable product stock management"
 
-#: ../dokan/products/new-product-single.php:476
+#: ../dokan/products/new-product-single.php:480
 msgid "Quantity"
 msgstr "Quantity"
 
-#: ../dokan/products/new-product-single.php:477
+#: ../dokan/products/new-product-single.php:481
 msgid "1"
 msgstr "1"
 
-#: ../dokan/products/new-product-single.php:481
+#: ../dokan/products/new-product-single.php:485
 msgid "Allow Backorders"
 msgstr "Allow Backorders"
 
-#: ../dokan/products/new-product-single.php:484
+#: ../dokan/products/new-product-single.php:488
 msgid "Do not allow"
 msgstr "Do not allow"
 
-#: ../dokan/products/new-product-single.php:485
+#: ../dokan/products/new-product-single.php:489
 msgid "Allow but notify customer"
 msgstr "Allow but notify customer"
 
-#: ../dokan/products/new-product-single.php:486
+#: ../dokan/products/new-product-single.php:490
 msgid "Allow"
 msgstr "Allow"
 
-#: ../dokan/products/new-product-single.php:495
+#: ../dokan/products/new-product-single.php:499
 msgid "Allow only one quantity of this product to be bought in a single order"
 msgstr "Allow only one quantity of this product to be bought in a single order"
 
-#: ../dokan/products/new-product-single.php:512
+#: ../dokan/products/new-product-single.php:516
 msgid "Downloadable Options"
 msgstr "Downloadable Options"
 
-#: ../dokan/products/new-product-single.php:513
+#: ../dokan/products/new-product-single.php:517
 msgid "Configure your downloadable product settings"
 msgstr "Configure your downloadable product settings"
 
-#: ../dokan/products/new-product-single.php:538
-#| msgid "Add New"
+#: ../dokan/products/new-product-single.php:542
 msgid "Add File"
 msgstr "Add File"
 
-#: ../dokan/products/new-product-single.php:544
+#: ../dokan/products/new-product-single.php:548
 msgid "Name"
 msgstr "Name"
 
-#: ../dokan/products/new-product-single.php:544
+#: ../dokan/products/new-product-single.php:548
 msgid "This is the name of the download shown to the customer."
 msgstr "This is the name of the download shown to the customer."
 
-#: ../dokan/products/new-product-single.php:545
+#: ../dokan/products/new-product-single.php:549
 msgid "File URL"
 msgstr "File URL"
 
-#: ../dokan/products/new-product-single.php:545
+#: ../dokan/products/new-product-single.php:549
 msgid ""
 "This is the URL or absolute path to the file which customers will get access "
 "to."
@@ -958,65 +974,64 @@ msgstr ""
 "This is the URL or absolute path to the file which customers will get access "
 "to."
 
-#: ../dokan/products/new-product-single.php:546
+#: ../dokan/products/new-product-single.php:550
 msgid "Action"
 msgstr "Action"
 
-#: ../dokan/products/new-product-single.php:564
+#: ../dokan/products/new-product-single.php:568
 msgid "Download Limit"
 msgstr "Download Limit"
 
-#: ../dokan/products/new-product-single.php:565
+#: ../dokan/products/new-product-single.php:569
 msgid "e.g. 4"
 msgstr "e.g. 4"
 
-#: ../dokan/products/new-product-single.php:569
+#: ../dokan/products/new-product-single.php:573
 msgid "Download Expiry"
 msgstr "Download Expiry"
 
-#: ../dokan/products/new-product-single.php:570
+#: ../dokan/products/new-product-single.php:574
 msgid "Number of days"
 msgstr "Number of days"
 
-#: ../dokan/products/new-product-single.php:583
+#: ../dokan/products/new-product-single.php:587
 msgid "Other Options"
 msgstr "Other Options"
 
-#: ../dokan/products/new-product-single.php:584
+#: ../dokan/products/new-product-single.php:588
 msgid "Set your extra product options"
 msgstr "Set your extra product options"
 
-#: ../dokan/products/new-product-single.php:593
+#: ../dokan/products/new-product-single.php:597
 msgid "Product Status"
 msgstr "Product Status"
 
-#: ../dokan/products/new-product-single.php:596
+#: ../dokan/products/new-product-single.php:600
 msgid "Online"
 msgstr "Online"
 
-#: ../dokan/products/new-product-single.php:597
+#: ../dokan/products/new-product-single.php:601
 msgid "Draft"
 msgstr "Draft"
 
-#: ../dokan/products/new-product-single.php:612
+#: ../dokan/products/new-product-single.php:616
 msgid "Visibility"
 msgstr "Visibility"
 
-#: ../dokan/products/new-product-single.php:623
+#: ../dokan/products/new-product-single.php:627
 msgid "Purchase Note"
 msgstr "Purchase Note"
 
-#: ../dokan/products/new-product-single.php:624
+#: ../dokan/products/new-product-single.php:628
 msgid "Customer will get this info in their order email"
 msgstr "Customer will get this info in their order email"
 
-#: ../dokan/products/new-product-single.php:629
+#: ../dokan/products/new-product-single.php:633
 msgid "Enable product reviews"
 msgstr "Enable product reviews"
 
 #: ../dokan/products/new-product.php:41
 #: ../dokan/products/tmpl-add-product-popup.php:3
-#| msgid "Add New"
 msgid "Add New Product"
 msgstr "Add New Product"
 
@@ -1044,7 +1059,7 @@ msgstr "Add short description of the product"
 msgid "Select type"
 msgstr "Select type"
 
-#: ../dokan/products/new-product.php:283
+#: ../dokan/products/new-product.php:287
 msgid "Add your product description"
 msgstr "Add your product description"
 
@@ -1082,13 +1097,13 @@ msgstr "Thanks!"
 msgid "There is one conflicted resolution."
 msgstr "There is one conflicted resolution."
 
-#: ../emails/resolution_error.php:4 ../includes/classes/class.vontest.php:159
+#: ../emails/resolution_error.php:4 ../includes/classes/class.vontest.php:167
 msgid ""
 "El error puede deberse a que no hay votos aplicados a las answers de ese "
 "vontest o que hay dos propuestas que tienen los mismos votos"
 msgstr ""
-"The error may be because there are no votes applied to the answers of that "
-"vontest or that there are two proposals that have the same votes"
+"El error puede deberse a que no hay votos aplicados a las answers de ese "
+"vontest o que hay dos propuestas que tienen los mismos votos"
 
 #: ../emails/resolution_error.php:5
 msgid "You can see the vontest at:"
@@ -1190,7 +1205,6 @@ msgid "Search Categories community"
 msgstr "Search Categories community"
 
 #: ../includes/about-community.php:12
-#| msgid "Categories for"
 msgid "All Categories community"
 msgstr "All Categories community"
 
@@ -1219,7 +1233,6 @@ msgid "New Category community Name"
 msgstr "New Category community Name"
 
 #: ../includes/about-community.php:19
-#| msgid "Categories for"
 msgid "Categories community"
 msgstr "Categories community"
 
@@ -1252,7 +1265,6 @@ msgid "No About this community posts found"
 msgstr "No About this community posts found"
 
 #: ../includes/about-community.php:52
-#| msgid "No HTML5 Blank Custom Posts found in Trash"
 msgid "No About this community Posts found in Trash"
 msgstr "No About this community Posts found in Trash"
 
@@ -1418,7 +1430,6 @@ msgstr "Install %2$s"
 
 #: ../includes/classes/class-tgm-plugin-activation.php:2701
 #, php-format
-#| msgid "%1$s at %2$s"
 msgid "Update %2$s"
 msgstr "Update %2$s"
 
@@ -1513,26 +1524,32 @@ msgstr "All installations have been completed."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Installing Plugin %1$s (%2$d/%3$d)"
 
-#: ../includes/classes/class.vontest.php:158
-#: ../includes/classes/class.vontest.php:163
+#: ../includes/classes/class.logger.php:275
+msgid "New user registered"
+msgstr "New user registered"
+
+#: ../includes/classes/class.logger.php:278
+msgid "Login user"
+msgstr "Login user"
+
+#: ../includes/classes/class.vontest.php:166
+#: ../includes/classes/class.vontest.php:171
 msgid "Se produjo un error al crear la resolución del vontest "
-msgstr "An error occurred while creating the vontest resolution"
+msgstr "An error occurred while generating the Contest Resolution"
 
-#: ../includes/classes/class.vontest.php:160
+#: ../includes/classes/class.vontest.php:168
 msgid "Ver vontest en conflicto"
-msgstr "See vontest in conflict"
+msgstr "See conflicting Contest"
 
-#: ../includes/classes/class.vontest.php:169
+#: ../includes/classes/class.vontest.php:177
 msgid ""
 "No se ha podido realizar la resolución porque no han habido votos o varias "
 "opciones han quedado igualadas"
-msgstr ""
-"It was not possible to make the resolution because there were no votes or "
-"several options have been matched"
+msgstr "An error occurred while generating the automated Resolution"
 
 #: ../includes/cron.php:41
 msgid "Vontests close to his votography. "
-msgstr "Vontests close to his votography. "
+msgstr "Votography for the following Contests is near"
 
 #: ../includes/custom-taxonomy-sort/custom-taxonomy-sort.php:29
 msgid ""
@@ -1626,47 +1643,51 @@ msgstr "Add or change logo"
 
 #: ../includes/datos_generales.php:48
 msgid "Habilitar politics"
-msgstr "Habilitar politics"
+msgstr "Activate Section: Politics"
 
 #: ../includes/datos_generales.php:52
 msgid "Habilitar economy"
-msgstr "Habilitar economy"
+msgstr "Activate Section: Economy"
 
 #: ../includes/datos_generales.php:56
 msgid "Habilitar social"
-msgstr "Habilitar social"
+msgstr "Activate Section: Social"
 
 #: ../includes/datos_generales.php:60
-msgid ""
-"Maximum user points in each vontest (can not be modified if there is any "
-"active vontest)"
-msgstr ""
-"Maximum user points in each vontest (can not be modified if there is any "
-"active vontest)"
+msgid "Log votes"
+msgstr "Log Votes"
 
 #: ../includes/datos_generales.php:64
 msgid ""
+"Maximum user points in each vontest (can not be modified if there is any "
+"active vontest)"
+msgstr ""
+"Maximum user voting points per each Vontest (can not be modified if there is "
+"any active Vontest)"
+
+#: ../includes/datos_generales.php:68
+msgid ""
 "Maximum user points in each response (can not be modified if there is any "
 "active vontest)"
 msgstr ""
-"Maximum user points in each response (can not be modified if there is any "
-"active vontest)"
+"Maximum user voting points per each response (can not be modified if there "
+"is any active Vontest)"
 
-#: ../includes/datos_generales.php:68
+#: ../includes/datos_generales.php:72
 msgid "General reset of votes"
-msgstr "General reset of votes"
+msgstr "Reset all votes"
 
-#: ../includes/datos_generales.php:69
+#: ../includes/datos_generales.php:73
 msgid "Delete all votes"
 msgstr "Delete all votes"
 
-#: ../includes/datos_generales.php:69 ../includes/datos_generales.php:88
+#: ../includes/datos_generales.php:73 ../includes/datos_generales.php:92
 msgid ""
 "ATTENTION: This will erase all active vontest votes and can not be undone"
 msgstr ""
-"ATTENTION: This will erase all active vontest votes and can not be undone"
+"ATTENTION: This will erase all active Vontest votes, and can not be undone"
 
-#: ../includes/datos_generales.php:110
+#: ../includes/datos_generales.php:114
 msgid "Save options"
 msgstr "Save options"
 
@@ -1676,40 +1697,46 @@ msgstr "Visit Store"
 
 #: ../includes/mycred.php:15
 msgid "Hook for AutoGOV"
-msgstr "Hook for AutoGOV"
+msgstr "Hooks for Autogov"
 
 #: ../includes/mycred.php:16
 msgid "Hook description"
 msgstr "Hook description"
 
-#: ../includes/mycred.php:215
+#: ../includes/mycred.php:260
 msgid "Answer most voted on closing votograpy"
-msgstr "Answer most voted on closing votograpy"
+msgstr "Answer most voted in Votograpy"
 
-#: ../includes/mycred.php:225 ../includes/mycred.php:249
-#: ../includes/mycred.php:274
+#: ../includes/mycred.php:270 ../includes/mycred.php:294
+#: ../includes/mycred.php:317 ../includes/mycred.php:343
 msgid "Limit"
 msgstr "Limit"
 
-#: ../includes/mycred.php:231 ../includes/mycred.php:255
-#: ../includes/mycred.php:280 ../includes/mycred.php:298
+#: ../includes/mycred.php:276 ../includes/mycred.php:300
+#: ../includes/mycred.php:323 ../includes/mycred.php:349
+#: ../includes/mycred.php:367
 msgid "Log template"
 msgstr "Log template"
 
-#: ../includes/mycred.php:232 ../includes/mycred.php:256
-#: ../includes/mycred.php:281 ../includes/mycred.php:299
+#: ../includes/mycred.php:277 ../includes/mycred.php:301
+#: ../includes/mycred.php:324 ../includes/mycred.php:350
+#: ../includes/mycred.php:368
 msgid "required"
-msgstr "required"
+msgstr "Required"
 
-#: ../includes/mycred.php:239
+#: ../includes/mycred.php:284
 msgid "Product purchased"
 msgstr "Product purchased"
 
-#: ../includes/mycred.php:264
+#: ../includes/mycred.php:307
+msgid "Product sold"
+msgstr "Product sold"
+
+#: ../includes/mycred.php:333
 msgid "Favorite Activity"
 msgstr "Favorite Activity"
 
-#: ../includes/mycred.php:288
+#: ../includes/mycred.php:357
 msgid "Removing Favorit Activity"
 msgstr "Removing Favorit Activity"
 
@@ -1718,7 +1745,6 @@ msgid "Image"
 msgstr "Image"
 
 #: ../includes/tax_image.php:50 ../includes/tax_image.php:86
-#| msgid "Add New"
 msgid "Add Image"
 msgstr "Add Image"
 
@@ -1748,71 +1774,71 @@ msgstr "Update Topics for vontest"
 
 #: ../includes/vontests.php:18
 msgid "Añadir nuevo Topics for vontest"
-msgstr "Añadir nuevo Topics for vontest"
+msgstr "Add new Topics for this Vontest"
 
 #: ../includes/vontests.php:19
 msgid "Nombre del nuevo Topic for vontest"
-msgstr "Nombre del nuevo Topic for vontest"
+msgstr "Name of new Topic for Vontest"
 
 #: ../includes/vontests.php:20
 msgid "Separar Topics for vontest por comas"
-msgstr "Separar Topics for vontest por comas"
+msgstr "Separate Topics for Vontest with comas"
 
 #: ../includes/vontests.php:21
 msgid "Añadir o eliminar Topics for vontest"
-msgstr "Añadir o eliminar Topics for vontest"
+msgstr "Add or delete Topics for Vontest"
 
 #: ../includes/vontests.php:22
 msgid "Escoger entre los Topics for vontest más utilizados"
-msgstr "Escoger entre los Topics for vontest más utilizados"
+msgstr "Select among most popular Topics"
 
 #: ../includes/vontests.php:35
 msgid "Search Tags for vontest"
-msgstr "Search Tags for vontest"
+msgstr "Search Tags for Vontest"
 
 #: ../includes/vontests.php:36
 msgid "Popular Tags for vontest"
-msgstr "Popular Tags for vontest"
+msgstr "Popular Tags for Vontest"
 
 #: ../includes/vontests.php:37
 msgid "All Tags for vontest"
-msgstr "All Tags for vontest"
+msgstr "All Tags for Vontest"
 
 #: ../includes/vontests.php:40
 msgid "Edit Tags for vontest"
-msgstr "Edit Tags for vontest"
+msgstr "Edit Tags for Vontest"
 
 #: ../includes/vontests.php:41
 msgid "Update Tags for vontest"
-msgstr "Update Tags for vontest"
+msgstr "Update Tags for Vontest"
 
 #: ../includes/vontests.php:42
 msgid "Add New Tags for vontest"
-msgstr "Add New Tags for vontest"
+msgstr "Add New Tags for Vontest"
 
 #: ../includes/vontests.php:43
 msgid "New Tags for vontest Name"
-msgstr "New Tags for vontest Name"
+msgstr "New Tags for Vontest Name"
 
 #: ../includes/vontests.php:44
 msgid "Separate Tags for vontest with commas"
-msgstr "Separate Tags for vontest with commas"
+msgstr "Separate Tags for Vontest with commas"
 
 #: ../includes/vontests.php:45
 msgid "Add or remove Tags for vontest"
-msgstr "Add or remove Tags for vontest"
+msgstr "Add or remove Tags for Vontest"
 
 #: ../includes/vontests.php:46
 msgid "Choose from the most used Tags for vontest"
-msgstr "Choose from the most used Tags for vontest"
+msgstr "Select among most popular Tags for Vontest"
 
 #: ../includes/vontests.php:47
 msgid "No Tags for vontest found."
-msgstr "No Tags for vontest found."
+msgstr "No Tags found for this Vontest"
 
 #: ../includes/vontests.php:48
 msgid "Tags for vontest"
-msgstr "Tags for vontest"
+msgstr "Tags for Vontest"
 
 #: ../includes/vontests.php:67
 msgid "Add new Question"
@@ -1824,51 +1850,51 @@ msgstr "Edit Question"
 
 #: ../includes/vontests.php:69
 msgid "Nueva Question"
-msgstr "Nueva Question"
+msgstr "New Question"
 
 #: ../includes/vontests.php:70
 msgid "Ver Question"
-msgstr "Ver Question"
+msgstr "See Question"
 
 #: ../includes/vontests.php:71
 msgid "Buscar Question"
-msgstr "Buscar Question"
+msgstr "Search Question"
 
 #: ../includes/vontests.php:72
 msgid "No se han encontrado Questions"
-msgstr "No se han encontrado Questions"
+msgstr "No Questions found"
 
 #: ../includes/vontests.php:73
 msgid "No se han encontrado Questions en la papelera"
-msgstr "No se han encontrado Questions en la papelera"
+msgstr "No Questions found in Trash"
 
 #: ../includes/vontests.php:95
 msgid "Añadir nueva Answer"
-msgstr "Añadir nueva Answer"
+msgstr "Add new Answer"
 
 #: ../includes/vontests.php:96
 msgid "Editar Answer"
-msgstr "Editar Answer"
+msgstr "Edit Answer"
 
 #: ../includes/vontests.php:97
 msgid "Nueva Answer"
-msgstr "Nueva Answer"
+msgstr "New Answer"
 
 #: ../includes/vontests.php:98
 msgid "Ver Answer"
-msgstr "Ver Answer"
+msgstr "See Answer"
 
 #: ../includes/vontests.php:99
 msgid "Buscar Answer"
-msgstr "Buscar Answer"
+msgstr "Search Answer"
 
 #: ../includes/vontests.php:100
 msgid "No se han encontrado Answers"
-msgstr "No se han encontrado Answers"
+msgstr "No Answers found"
 
 #: ../includes/vontests.php:101
 msgid "No se han encontrado Answers en la papelera"
-msgstr "No se han encontrado Answers en la papelera"
+msgstr "No Answers found in trash"
 
 #: ../includes/vontests.php:122
 msgid "Add new Resolution"
@@ -1888,35 +1914,36 @@ msgstr "See Resolution"
 
 #: ../includes/vontests.php:126
 msgid "Buscar Resolution"
-msgstr "Buscar Resolution"
+msgstr "Search Resolutions"
 
 #: ../includes/vontests.php:127
 msgid "No se han encontrado Resolution"
-msgstr "No se han encontrado Resolution"
+msgstr "No Resolutions found"
 
 #: ../includes/vontests.php:128
 msgid "No se han encontrado Resolution en la papelera"
-msgstr "No se han encontrado Resolution en la papelera"
+msgstr "No Resolutions found in trash"
 
 #: ../includes/vontests.php:178
 msgid "¿Is special?"
-msgstr "¿Is special?"
+msgstr "¿Is this Vontest Public?"
 
 #: ../includes/vontests.php:179
 msgid "Date for votograpy"
-msgstr "Date for votograpy"
+msgstr "Votography date"
 
 #: ../includes/vontests.php:180
 msgid "Votographies"
 msgstr "Votographies"
 
-#: ../includes/vontests.php:181 ../includes/vontests.php:239
-#: ../single-question.php:337
+#: ../includes/vontests.php:181 ../includes/vontests.php:240
+#: ../single-question.php:360
 msgid "Conflicted resolutions"
-msgstr "Conflicted resolutions"
+msgstr "Conflicting Resolutions"
 
 #: ../includes/vontests.php:182 ../single-answer.php:15
-#: ../single-question.php:21 ../template-parts/politics-card.php:16
+#: ../single-question.php:21 ../single-question.php:316
+#: ../template-parts/politics-card.php:16
 msgid "Answers"
 msgstr "Answers"
 
@@ -1930,11 +1957,11 @@ msgstr "Reset votes"
 
 #: ../includes/vontests.php:191
 msgid "Marca esta pregunta como decisión importante"
-msgstr "Mark this question as an important decision"
+msgstr "Is this Vontest Important?"
 
 #: ../includes/vontests.php:192
 msgid "Checking this box means that it will come out as special."
-msgstr "Checking this box means that it will come out as special."
+msgstr "Checking this box means that it will appear as Public "
 
 #: ../includes/vontests.php:199
 msgid "Fecha"
@@ -1944,51 +1971,57 @@ msgstr "Date"
 msgid ""
 "This date will be the one that closes the voting and indicates the best "
 "option."
-msgstr ""
-"This date will be the one that closes the voting and indicates the best "
-"option."
+msgstr "On this date votes will be tallied for Resolution"
 
 #: ../includes/vontests.php:219
 msgid "Participants"
 msgstr "Participants"
 
-#: ../includes/vontests.php:227
+#: ../includes/vontests.php:220 ../single-question.php:311
+msgid "Quorum"
+msgstr "Quorum"
+
+#: ../includes/vontests.php:228
 msgid "There are no answers"
 msgstr "There are no answers"
 
-#: ../includes/vontests.php:247
+#: ../includes/vontests.php:248
 msgid "Select decisions from other vontest"
-msgstr "Select decisions from other vontest"
+msgstr "Select decisions from other Vontest"
 
-#: ../includes/vontests.php:263
+#: ../includes/vontests.php:264
 msgid "Aun no hay decisiones para relacionar."
-msgstr "There are still no decisions to relate."
+msgstr "There are no Decisions to associate yet"
 
-#: ../includes/vontests.php:307
+#: ../includes/vontests.php:308
 msgid "Resetear los votos de esta question"
-msgstr "Reset the votes of this question"
+msgstr "Reset votes for this Question"
 
-#: ../includes/vontests.php:308 ../includes/vontests.php:312
+#: ../includes/vontests.php:309 ../includes/vontests.php:313
 msgid ""
 "ATTENTION: This will erase all vows of this vontest and can not be undone"
 msgstr ""
-"ATTENTION: This will erase all vows of this vontest and can not be undone"
+"ATTENTION: This will erase all votes for this Vontest and can not be undone"
 
-#: ../includes/vontests.php:336
+#: ../includes/vontests.php:337
 msgid "Can not reset votes from a vontest that is no longer active"
-msgstr "Can not reset votes from a vontest that is no longer active"
+msgstr "Can not reset votes from a Vontest that is no longer active"
 
-#: ../includes/vontests.php:341 ../includes/vontests.php:427
+#: ../includes/vontests.php:342 ../includes/vontests.php:436
 msgid "What question does it belong to?"
 msgstr "What question does it belong to?"
 
-#: ../includes/vontests.php:501
+#: ../includes/vontests.php:353
+msgid "No parent vontest"
+msgstr "No parent Vontest"
+
+#: ../includes/vontests.php:525
 msgid "Pro"
 msgstr "Pro"
 
-#: ../includes/vontests.php:503
+#: ../includes/vontests.php:527
 msgid "Contra"
-msgstr "Contra"
+msgstr "Con"
 
 #: ../index.php:7
 msgid "Latest Posts"
@@ -1996,7 +2029,7 @@ msgstr "Latest Posts"
 
 #: ../loop-search.php:28 ../loop.php:28 ../taxonomy-topics.php:67
 msgid "view more"
-msgstr "view more"
+msgstr "View More"
 
 #: ../menu.php:2
 msgid "Home"
@@ -2014,15 +2047,12 @@ msgstr "Economy"
 msgid "Social"
 msgstr "Social"
 
-#: ../menu.php:16 ../menu.php:20
+#: ../menu.php:16 ../menu.php:19
 msgid "Me"
 msgstr "Me"
 
-#: ../menu.php:17
-msgid "Logout"
-msgstr "Logout"
-
 #: ../page-politics.php:7 ../template-parts/my-politics-card.php:5
+#: ../template-parts/my-politics-card.php:8
 #: ../template-parts/politics-card.php:5
 msgid "POLITICS"
 msgstr "POLITICS"
@@ -2034,7 +2064,7 @@ msgstr "Propose, Discuss, Decide"
 
 #: ../search.php:8 ../template-parts/menu-myaccount.php:39
 msgid " Atrás"
-msgstr " Atrás"
+msgstr "Back"
 
 #: ../search.php:13
 #, php-format
@@ -2060,24 +2090,23 @@ msgstr "Decisions"
 
 #: ../single-answer.php:21
 msgid "Answer for the vontest"
-msgstr "Answer for the vontest"
+msgstr "Answer for this Vontest"
 
 #: ../single-answer.php:35 ../single-question.php:72 ../single-question.php:201
-#| msgid "Powered by"
 msgid "Posted by"
 msgstr "Posted by"
 
 #: ../single-answer.php:42 ../single-answer.php:50
 msgid "vote this answer"
-msgstr "vote this answer"
+msgstr "Vote this Answer"
 
 #: ../single-answer.php:49
 msgid "< Go back"
 msgstr "< Go back"
 
-#: ../single-question.php:15
+#: ../single-question.php:15 ../template-parts/statistics.php:33
 msgid "Closed vontest"
-msgstr "Closed vontest"
+msgstr "Closed Vontest"
 
 #: ../single-question.php:51 ../template-parts/main-politics.php:21
 msgid "Topics"
@@ -2089,7 +2118,7 @@ msgstr "Vontest metrics"
 
 #: ../single-question.php:83
 msgid "answers"
-msgstr "answers"
+msgstr "Answers"
 
 #: ../single-question.php:90 ../single-question.php:164
 msgid "VIEW ANSWERS"
@@ -2102,11 +2131,11 @@ msgstr "PUBLISH NEW ANSWER"
 
 #: ../single-question.php:104
 msgid "Table of content"
-msgstr "Table of content"
+msgstr "Table of Contents"
 
 #: ../single-question.php:177
 msgid "Answers for the vontest"
-msgstr "Answers for the vontest"
+msgstr "Answers for the Vontest"
 
 #: ../single-question.php:195
 msgid "read more"
@@ -2114,11 +2143,11 @@ msgstr "read more"
 
 #: ../single-question.php:211
 msgid "Esta respuesta tiene"
-msgstr "This answer has"
+msgstr "This Answer has"
 
 #: ../single-question.php:211
 msgid "puntos en total"
-msgstr "points in total"
+msgstr "Points in Total"
 
 #: ../single-question.php:214
 msgid "Tienes "
@@ -2126,11 +2155,11 @@ msgstr "You have"
 
 #: ../single-question.php:214
 msgid "punto(s) otorgado(s) a esta respuesta"
-msgstr "point(s) awarded to this answer"
+msgstr "point(s) assigned to this Answer"
 
 #: ../single-question.php:216
 msgid "No tienes puntos otorgados a esta respuesta<br>"
-msgstr "No tienes puntos otorgados a esta respuesta<br>"
+msgstr "You have no point(s) assigned to this Answer<br>"
 
 #: ../single-question.php:223
 msgid "points"
@@ -2143,8 +2172,7 @@ msgstr "VOTE THIS ANSWER"
 #: ../single-question.php:229
 msgid ""
 "No puedes votar esta respuesta, no te quedan más puntos en este vontest."
-msgstr ""
-"No puedes votar esta respuesta, no te quedan más puntos en este vontest."
+msgstr "You have no voting points remaining for this Contest"
 
 #: ../single-question.php:253
 msgid "Create new answer"
@@ -2156,23 +2184,23 @@ msgstr "Answer title"
 
 #: ../single-question.php:258
 msgid "Add your answer title"
-msgstr "Add your answer title"
+msgstr "Add your answer’s Title"
 
 #: ../single-question.php:263
 msgid "Add your answer description"
-msgstr "Add your answer description"
+msgstr "Add your answer’s Description"
 
 #: ../single-question.php:272
 msgid "Add your answer featured image"
-msgstr "Add your answer featured image"
+msgstr "Add your answer’s Featured Image"
 
 #: ../single-question.php:281
 msgid "Publicar respuesta"
-msgstr "Publicar respuesta"
+msgstr "Publish Answer"
 
 #: ../single-question.php:293
 msgid "Before take a decision of"
-msgstr "Before take a decision of"
+msgstr "Before making a Decision of"
 
 #: ../single-question.php:297
 msgid "Next votography"
@@ -2182,37 +2210,45 @@ msgstr "Next votography"
 msgid "History of this Vontest"
 msgstr "History of this Vontest"
 
-#: ../single-question.php:306
+#: ../single-question.php:309
 msgid "Votography"
 msgstr "Votography"
 
-#: ../single-question.php:307
+#: ../single-question.php:311
 msgid "Participantes"
-msgstr "Participantes"
+msgstr "Participants"
 
-#: ../single-question.php:315
+#: ../single-question.php:317
+msgid "Votes"
+msgstr "Votes"
+
+#: ../single-question.php:331
 msgid "There is no answers"
-msgstr "There is no answers"
+msgstr "There are no answers"
 
-#: ../single-question.php:324
+#: ../single-question.php:342
+msgid "There are not votographies yet"
+msgstr "There are no Votographies yet"
+
+#: ../single-question.php:347
 msgid "Created resolutions"
-msgstr "Created resolutions"
+msgstr "Created Resolutions"
 
-#: ../single-question.php:333
+#: ../single-question.php:356
 msgid "There are still no resolutions for this vontest"
-msgstr "There are still no resolutions for this vontest"
+msgstr "There are no Resolutions for this Vontest yet"
 
-#: ../single-question.php:346
+#: ../single-question.php:369
 msgid "There is not conflicted resolutions for this vontest"
-msgstr "There is not conflicted resolutions for this vontest"
+msgstr "There are no conflicting Resolutions for this Vontest"
 
 #: ../single-resolution.php:57
 msgid "Resolution for:"
 msgstr "Resolution for:"
 
-#: ../single-resolution.php:68
+#: ../single-resolution.php:70
 msgid "Vontest parent"
-msgstr "Vontest parent"
+msgstr "Parent Vontest"
 
 #: ../single.php:37
 msgid "Tags: "
@@ -2220,7 +2256,7 @@ msgstr "Tags: "
 
 #: ../single.php:39
 msgid "Categorised in: "
-msgstr "Categorised in: "
+msgstr "Categorized in: "
 
 #: ../single.php:41
 msgid "This post was written by "
@@ -2231,16 +2267,16 @@ msgid "Tag Archive: "
 msgstr "Tag Archive: "
 
 #: ../taxonomy-topics.php:14
-msgid "Topics for"
-msgstr "Topics for"
+msgid "Vontests for"
+msgstr "Vontests for"
 
 #: ../taxonomy-topics.php:31
 msgid "Unfollow this topic"
-msgstr "Unfollow this topic"
+msgstr "Unfollow this Topic"
 
 #: ../taxonomy-topics.php:32
 msgid "Follow this topic"
-msgstr "Follow this topic"
+msgstr "Follow this Topic"
 
 #: ../template-parts/aboutautogov-card.php:5
 msgid "ABOUT AUTOGOV"
@@ -2252,7 +2288,7 @@ msgstr "And other Meta stuff"
 
 #: ../template-parts/aboutautogov-card.php:25
 msgid "No info about autogov"
-msgstr "No info about autogov"
+msgstr "No info about Autogov"
 
 #: ../template-parts/aboutcommunity-card.php:5
 msgid "ABOUT THIS COMMUNITY"
@@ -2260,7 +2296,7 @@ msgstr "ABOUT THIS COMMUNITY"
 
 #: ../template-parts/aboutcommunity-card.php:6
 msgid "Who we are and how come"
-msgstr "Who we are and how come"
+msgstr "Who we are (and how come we are that)"
 
 #: ../template-parts/aboutcommunity-card.php:92
 msgid "No info about this community"
@@ -2286,18 +2322,18 @@ msgstr "+ VOTED"
 msgid "+ IMPORTANT"
 msgstr "+ IMPORTANT"
 
-#: ../template-parts/discover-card.php:41 ../template-parts/economy-card.php:57
+#: ../template-parts/discover-card.php:50 ../template-parts/economy-card.php:61
 msgid "No services"
 msgstr "No services"
 
-#: ../template-parts/discover-card.php:62
-#: ../template-parts/my-politics-card.php:81
-#: ../template-parts/politics-card.php:106
+#: ../template-parts/discover-card.php:71
+#: ../template-parts/my-politics-card.php:85
+#: ../template-parts/politics-card.php:114
 msgid "No answers"
 msgstr "No answers"
 
-#: ../template-parts/discover-card.php:81
-#: ../template-parts/economy-card.php:146
+#: ../template-parts/discover-card.php:90
+#: ../template-parts/economy-card.php:158
 msgid "No events"
 msgstr "No events"
 
@@ -2322,67 +2358,66 @@ msgstr "Products"
 msgid "Eventos"
 msgstr "Events"
 
-#: ../template-parts/economy-card.php:27 ../template-parts/economy-card.php:72
-#: ../template-parts/economy-card.php:117
-#: ../template-parts/my-economy-card.php:38
-#: ../template-parts/my-politics-card.php:62
-#: ../template-parts/politics-card.php:31
-#: ../template-parts/politics-card.php:87
-#: ../template-parts/politics-card.php:124
+#: ../template-parts/economy-card.php:31 ../template-parts/economy-card.php:80
+#: ../template-parts/economy-card.php:129
+#: ../template-parts/my-economy-card.php:42
+#: ../template-parts/my-politics-card.php:66
+#: ../template-parts/politics-card.php:35
+#: ../template-parts/politics-card.php:95
+#: ../template-parts/politics-card.php:136
 msgid "Más recientes"
 msgstr "Most recent"
 
-#: ../template-parts/economy-card.php:28 ../template-parts/economy-card.php:73
-#: ../template-parts/economy-card.php:118
-#: ../template-parts/my-economy-card.php:39
-#: ../template-parts/my-politics-card.php:63
-#: ../template-parts/my-social-card.php:30
-#: ../template-parts/my-social-card.php:74
-#: ../template-parts/politics-card.php:32
-#: ../template-parts/politics-card.php:88
-#: ../template-parts/politics-card.php:125 ../template-parts/social-card.php:35
-#: ../template-parts/social-card.php:78
+#: ../template-parts/economy-card.php:32 ../template-parts/economy-card.php:81
+#: ../template-parts/economy-card.php:130
+#: ../template-parts/my-economy-card.php:43
+#: ../template-parts/my-politics-card.php:67
+#: ../template-parts/my-social-card.php:33
+#: ../template-parts/my-social-card.php:81
+#: ../template-parts/politics-card.php:36
+#: ../template-parts/politics-card.php:96
+#: ../template-parts/politics-card.php:137 ../template-parts/social-card.php:39
+#: ../template-parts/social-card.php:86
 msgid "Alfabéticamente"
 msgstr "Alphabetically"
 
-#: ../template-parts/economy-card.php:29 ../template-parts/economy-card.php:74
-#: ../template-parts/economy-card.php:119
-#: ../template-parts/my-economy-card.php:40
-msgid "Más vendidos"
-msgstr "Best sellers"
-
-#: ../template-parts/economy-card.php:30 ../template-parts/economy-card.php:75
-#: ../template-parts/economy-card.php:120
-#: ../template-parts/my-economy-card.php:41
-msgid "Más valoraciones"
-msgstr "More ratings"
-
-#: ../template-parts/economy-card.php:31 ../template-parts/economy-card.php:76
-#: ../template-parts/economy-card.php:121
-#: ../template-parts/my-economy-card.php:42
-msgid "Mejor valoración media"
-msgstr "Best average rating"
-
-#: ../template-parts/economy-card.php:32 ../template-parts/economy-card.php:77
-#: ../template-parts/economy-card.php:122
-#: ../template-parts/my-economy-card.php:43
-msgid "Más baratos"
-msgstr "Cheaper"
-
-#: ../template-parts/economy-card.php:33 ../template-parts/economy-card.php:78
-#: ../template-parts/economy-card.php:123
+#: ../template-parts/economy-card.php:33 ../template-parts/economy-card.php:82
+#: ../template-parts/economy-card.php:131
 #: ../template-parts/my-economy-card.php:44
+msgid "Más vendidos"
+msgstr "Most sold"
+
+#: ../template-parts/economy-card.php:34 ../template-parts/economy-card.php:83
+#: ../template-parts/economy-card.php:132
+#: ../template-parts/my-economy-card.php:45
+msgid "Más valoraciones"
+msgstr "Most rated"
+
+#: ../template-parts/economy-card.php:35 ../template-parts/economy-card.php:84
+#: ../template-parts/economy-card.php:133
+#: ../template-parts/my-economy-card.php:46
+msgid "Mejor valoración media"
+msgstr "Best rating"
+
+#: ../template-parts/economy-card.php:36 ../template-parts/economy-card.php:85
+#: ../template-parts/economy-card.php:134
+#: ../template-parts/my-economy-card.php:47
+msgid "Más baratos"
+msgstr "Lower price"
+
+#: ../template-parts/economy-card.php:37 ../template-parts/economy-card.php:86
+#: ../template-parts/economy-card.php:135
+#: ../template-parts/my-economy-card.php:48
 msgid "Más caros"
-msgstr "More expensive"
+msgstr "Higher price"
 
-#: ../template-parts/economy-card.php:37 ../template-parts/economy-card.php:82
-#: ../template-parts/economy-card.php:127
+#: ../template-parts/economy-card.php:41 ../template-parts/economy-card.php:90
+#: ../template-parts/economy-card.php:139
 #: ../template-parts/my-economy-card.php:22
-#| msgid "View Article"
 msgid "Create article"
-msgstr "Create article"
+msgstr "Create Article"
 
-#: ../template-parts/economy-card.php:101
+#: ../template-parts/economy-card.php:109
 msgid "No Products"
 msgstr "No Products"
 
@@ -2391,17 +2426,23 @@ msgstr "No Products"
 msgid "NAVIGATOR"
 msgstr "NAVIGATOR"
 
-#: ../template-parts/main-politics.php:128 ../template-parts/main-shop.php:130
+#: ../template-parts/main-politics.php:118 ../template-parts/main-shop.php:123
 msgid "No tags"
-msgstr "No tags"
+msgstr "No Tags"
 
 #: ../template-parts/main-shop.php:22
-#| msgid "Categories for"
 msgid "Categories"
 msgstr "Categories"
 
+#: ../template-parts/menu-myaccount.php:45
+msgid "Edit my Account"
+msgstr "Edit my Account"
+
+#: ../template-parts/menu-myaccount.php:48
+msgid "Logout"
+msgstr "Logout"
+
 #: ../template-parts/my-economy-card.php:11
-#| msgid "View Article"
 msgid "My Articles"
 msgstr "My Articles"
 
@@ -2410,30 +2451,24 @@ msgid "My Voins"
 msgstr "My Voins"
 
 #: ../template-parts/my-economy-card.php:13
-msgid "Orders"
-msgstr "Orders"
+msgid "My Orders"
+msgstr "My Orders"
 
 #: ../template-parts/my-economy-card.php:14
-msgid "Addresses"
-msgstr "Addresses"
+msgid "My Addresses"
+msgstr "My Addresses"
 
 #: ../template-parts/my-economy-card.php:15
 msgid "My shop"
-msgstr "My shop"
+msgstr "My Shop"
 
-#: ../template-parts/my-economy-card.php:61
-#| msgid "View Article"
+#: ../template-parts/my-economy-card.php:85
 msgid "No articles"
-msgstr "No articles"
+msgstr "No Articles"
 
-#: ../template-parts/my-economy-card.php:67
+#: ../template-parts/my-economy-card.php:91
 msgid "Current Voins:"
 msgstr "Current Voins:"
-
-#: ../template-parts/my-politics-card.php:8
-#: ../template-parts/politics-card.php:8
-msgid "VONTEST"
-msgstr "VONTEST"
 
 #: ../template-parts/my-politics-card.php:9
 #: ../template-parts/politics-card.php:9
@@ -2441,8 +2476,8 @@ msgid ""
 "A Vontest = 1 Ques-on, Unlimited Answers, Evalua-on of the Answers, and a "
 "Voted Desicion"
 msgstr ""
-"A Vontest = 1 Ques-on, Unlimited Answers, Evalua-on of the Answers, and a "
-"Voted Desicion"
+"A Vontest = 1 Question, Unlimited Answers, Evaluation of the Answers, and a "
+"Voted Decision"
 
 #: ../template-parts/my-politics-card.php:15
 msgid "My Questions"
@@ -2454,27 +2489,27 @@ msgstr "My Answers"
 
 #: ../template-parts/my-politics-card.php:17
 msgid "My topics"
-msgstr "My topics"
+msgstr "My Topics"
 
 #: ../template-parts/my-politics-card.php:24
-#: ../template-parts/politics-card.php:38
+#: ../template-parts/politics-card.php:42
 msgid "Create vontest"
-msgstr "Create vontest"
+msgstr "Create Vontest"
 
 #: ../template-parts/my-politics-card.php:43
-#: ../template-parts/politics-card.php:68
+#: ../template-parts/politics-card.php:72
 msgid "No questions"
-msgstr "No questions"
+msgstr "No Questions"
 
-#: ../template-parts/my-politics-card.php:64
-#: ../template-parts/politics-card.php:33
-#: ../template-parts/politics-card.php:89
+#: ../template-parts/my-politics-card.php:68
+#: ../template-parts/politics-card.php:37
+#: ../template-parts/politics-card.php:97
 msgid "Más comentados"
-msgstr "Más comentados"
+msgstr "Most comments"
 
-#: ../template-parts/my-politics-card.php:137
+#: ../template-parts/my-politics-card.php:141
 msgid "No topics yet"
-msgstr "No topics yet"
+msgstr "No Topics yet"
 
 #: ../template-parts/my-questions-box.php:5 ../template-parts/vontest-box.php:5
 msgid "Closed"
@@ -2493,53 +2528,53 @@ msgid "My Game"
 msgstr "My Game"
 
 #: ../template-parts/my-social-card.php:14
-msgid "My Account"
-msgstr "My Account"
-
-#: ../template-parts/my-social-card.php:15
 msgid "Social profile"
-msgstr "Social profile"
+msgstr "My Profile"
 
-#: ../template-parts/my-social-card.php:31 ../template-parts/social-card.php:36
+#: ../template-parts/my-social-card.php:34 ../template-parts/social-card.php:40
 msgid "Más miembros"
-msgstr "Más miembros"
+msgstr "More Members"
 
-#: ../template-parts/my-social-card.php:35 ../template-parts/social-card.php:41
+#: ../template-parts/my-social-card.php:38 ../template-parts/social-card.php:45
 msgid "Create new group"
-msgstr "Create new group"
+msgstr "Create new Group"
 
-#: ../template-parts/my-social-card.php:54 ../template-parts/social-card.php:61
-#: ../template-parts/social-card.php:103
+#: ../template-parts/my-social-card.php:57 ../template-parts/social-card.php:65
+#: ../template-parts/social-card.php:111
 msgid "There were no groups found."
-msgstr "There were no groups found."
+msgstr "There were no Groups found."
 
-#: ../template-parts/my-social-card.php:91
+#: ../template-parts/my-social-card.php:98
 msgid "There were no friends found."
 msgstr "There were no friends found."
+
+#: ../template-parts/politics-card.php:8
+msgid "VONTEST"
+msgstr "VONTEST"
 
 #: ../template-parts/politics-card.php:15
 msgid "Questions"
 msgstr "Questions"
 
 #: ../template-parts/politics-card.php:17
-msgid "Specials"
-msgstr "Specials"
+msgid "Public"
+msgstr "Public"
 
-#: ../template-parts/politics-card.php:34
+#: ../template-parts/politics-card.php:38
 msgid "Próximos a finalizar"
-msgstr "Próximos a finalizar"
+msgstr "Close to finishing"
 
-#: ../template-parts/politics-card.php:142
+#: ../template-parts/politics-card.php:154
 msgid "No specials"
 msgstr "No specials"
 
-#: ../template-parts/politics-card.php:188
+#: ../template-parts/politics-card.php:204
 msgid "Ver todos"
-msgstr "Ver todos"
+msgstr "See all"
 
-#: ../template-parts/politics-card.php:196
+#: ../template-parts/politics-card.php:212
 msgid "No resolutions"
-msgstr "No resolutions"
+msgstr "No Resolutions"
 
 #: ../template-parts/social-card.php:15
 msgid "Groups"
@@ -2551,15 +2586,47 @@ msgstr "People"
 
 #: ../template-parts/social-card.php:17
 msgid "The game"
-msgstr "The game"
+msgstr "The Game"
 
-#: ../template-parts/social-card.php:83
+#: ../template-parts/social-card.php:91
 msgid "My profile"
-msgstr "My profile"
+msgstr "My Profile"
+
+#: ../template-parts/statistics.php:16
+msgid "Open vontest"
+msgstr "Open Vontest"
+
+#: ../template-parts/statistics.php:42
+msgid "Answers published"
+msgstr "Answers published"
+
+#: ../template-parts/statistics.php:48
+msgid "Votes given"
+msgstr "Votes given"
+
+#: ../template-parts/statistics.php:52
+msgid "Voins active"
+msgstr "Voins active"
+
+#: ../template-parts/statistics.php:56
+msgid "Applauds given"
+msgstr "Applauds given"
+
+#: ../template-parts/statistics.php:62
+msgid "Purchases made"
+msgstr "Purchases made"
+
+#: ../template-parts/statistics.php:71
+msgid "Products available"
+msgstr "Products available"
+
+#: ../template-parts/statistics.php:76
+msgid "Users"
+msgstr "Users"
 
 #: ../woocommerce/archive-product.php:7
 msgid "ECONOMICS"
-msgstr "ECONOMICS"
+msgstr "ECONOMY"
 
 #: ../woocommerce/checkout/form-checkout.php:29
 msgid "You must be logged in to checkout."
@@ -2657,7 +2724,6 @@ msgid "There are no reviews yet."
 msgstr "There are no reviews yet."
 
 #: ../woocommerce/single-product-reviews.php:64
-#| msgid "Add New"
 msgid "Add a review"
 msgstr "Add a review"
 

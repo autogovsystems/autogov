@@ -6,7 +6,7 @@
         <span><?php _e('Propose, Discuss, Decide','autogov'); ?></span>
       <?php }else{ ?>
         <h3><?php _e('POLITICS','autogov'); ?></h3>
-        <span class="d-none"><?php _e('A Vontest = 1 Ques-on, Unlimited Answers, Evalua-on of the Answers, and a Voted Desicion','autogov'); ?></span>
+        <span class="d-none"><?php _e('A Vontest = 1 Question, Unlimited Answers, Evaluation of the Answers, and a Voted Desicion','autogov'); ?></span>
       <?php } ?>
     </div>
   </div>
