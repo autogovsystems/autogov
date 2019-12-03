@@ -44,7 +44,7 @@ if(in_array($active_menu,array('dashboard','dashboard/products','dashboard/order
   <div class="row tab" id="menu-myaccount">
       <a class="col" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>/edit-account/"><i class="fas fa-user"></i> <?php _e('Edit my Account','autogov'); ?></a>
       <?php $current_user = wp_get_current_user(); ?>
-        <div class="col text-center"><span style="font-size: 1.5em; line-height: 2em;"><?php echo $current_user->display_name; ?></span></div>
+        <div class="col text-center"><a href="<?php echo bp_loggedin_user_domain(); ?>" style="font-size: 1.5em; line-height: 0.35em;"><?php echo $current_user->display_name; ?></a></div>
       <a class="col" href="<?php echo wp_logout_url(); ?>"><i class="fas fa-sign-out-alt"></i> <?php _e('Logout','autogov'); ?></a>
   </div>
 <?php }

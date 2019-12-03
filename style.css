@@ -610,8 +610,8 @@ body.single-item.media .container-fluid.cardtab{width:100%;}
 #buddypress .members.friends {width:100%;}
 body.activity .cardtab.vtag {padding: 15px;}
 body.activity .container.cardtab {width:100%;}
-body.activity #buddypress .item-list-tabs {position: inherit !important; width: calc(100% + 30px) !important; margin-left: -15px !important;}
-body.activity #buddypress .item-list-tabs#subnav {margin-bottom:25px;}
+body.activity #buddypress .item-list-tabs {position: inherit !important; /*width: calc(100% + 30px) !important; margin-left: -15px !important;*/}
+body.activity #buddypress .item-list-tabs#subnav {margin-bottom:25px; margin-left: -30px !important; width: calc(100% + 30px) !important;}
 .mycred-my-balance-wrapper { }
 .mycred-my-balance-wrapper h1 { display: inline; font-size: 1em;}
 .mycred-my-balance-wrapper div { display: inline; }
