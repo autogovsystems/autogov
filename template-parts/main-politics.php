@@ -5,7 +5,7 @@
       <h3><?php _e('NAVIGATOR','autogov'); ?></h3>
     </div>
     <div class="col-1 text-right">
-      <a data-toggle="collapse" href="#mainpolitics" class="ml-auto collapsed"><i class="fas fa-plus"></i></a>
+      <a data-toggle="collapse" href="#mainpolitics" class="ml-auto"><i class="fas fa-plus"></i></a>
       <script>
       jQuery(document).ready(function(){
         jQuery('#mainpolitics').on('shown.bs.collapse', function () {
@@ -15,7 +15,7 @@
       </script>
     </div>
   </div>
-  <div id="mainpolitics" class="collapse">
+  <div id="mainpolitics" class="collapse show">
     <!-- Tab links -->
     <div class="row tab">
         <button class="tablinks col-4 active" data-id="topics"><?php _e('Topics','autogov'); ?></button>
@@ -105,9 +105,9 @@
           <?php if($terms){ ?>
           <ul class="colums">
             <?php foreach ( $terms as $term ) { ?>
-              <li>
+              <li <?php if(is_tax('vontest_tag',$term->term_id)){ ?> class="active" <?php } ?>>
                   <div class="title">
-                    <a href="<?php echo get_term_link($term->term_id, 'vontest_tag');?>">
+                    <a href="<?php echo get_term_link($term->term_id, 'vontest_tag');?>#vtags">
                       <?php echo $term->name;?>
                     </a>
                   </div>

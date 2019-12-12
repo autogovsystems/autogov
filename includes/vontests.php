@@ -2,6 +2,14 @@
 
 include('classes/class.vontest.php');
 
+function wpse214084_max_post_queries( $query ) {
+
+   if(is_tax('topics') || is_tax('vontest_tag')){
+     $query->set('posts_per_page', -1);
+   }
+}
+add_action( 'pre_get_posts', 'wpse214084_max_post_queries' );
+
 add_action( 'init', 'question_custom_posttype' );
  function question_custom_posttype(){
    // Creamos taxonomy topics

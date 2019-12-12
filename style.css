@@ -307,6 +307,8 @@ button.color_politics, a.color_politics { border-color: #d05024 !important; }
 #pastilla-politics.cardtab .tab button.active,#pastilla-politics.cardtab .tab a.active { color: #d05024; }
 #pastilla-politics.cardtab .tab button.active:after, #pastilla-politics.cardtab .tab a.active:after { background-color: #d05024; }
 #pastilla-politics.cardtab .tabcontent div.active .title a { color: #d05024; font-weight:bold; }
+#pastilla-politics.cardtab .tabcontent li.active .title a { color: #d05024; font-weight:bold; }
+
 
 /* COLORES ECONOMY */
 .color_economy { color: #609627 !important; }

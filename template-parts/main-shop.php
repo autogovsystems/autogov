@@ -6,7 +6,7 @@
 
     </div>
     <div class="col-1 text-right">
-      <a data-toggle="collapse" href="#mainshop" class="ml-auto collapsed"><i class="fas fa-plus"></i></a>
+      <a data-toggle="collapse" href="#mainshop" class="ml-auto"><i class="fas fa-plus"></i></a>
       <script>
       jQuery(document).ready(function(){
         jQuery('#mainshop').on('shown.bs.collapse', function () {
@@ -16,7 +16,7 @@
       </script>
     </div>
   </div>
-  <div id="mainshop" class="collapse">
+  <div id="mainshop" class="collapse show">
     <!-- Tab links -->
     <div class="row tab">
         <button class="tablinks col-4 active" data-id="categories"><?php _e('Categories','autogov'); ?></button>
@@ -104,14 +104,14 @@
 
           <?php $terms = get_terms(array('taxonomy' => 'product_tag', 'hide_empty' => false)); ?>
           <?php if($terms){ ?>
-          <ul>
+          <ul class="colums">
             <?php foreach ( $terms as $term ) {
               $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
               ?>
               <li>
                 <div <?php if(is_tax('product_tag',$term->term_id)){ ?> class="active" <?php } ?>>
                   <div class="market-title">
-                    <a href="<?php echo get_term_link($term->slug, 'product_tag');?>">
+                    <a href="<?php echo get_term_link($term->slug, 'product_tag');?>#tags">
                       <?php echo $term->name;?>
                     </a>
                   </div>
