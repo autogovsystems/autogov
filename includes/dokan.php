@@ -1,5 +1,6 @@
 <?php
 remove_action( 'woocommerce_account_dashboard', 'dokan_set_go_to_vendor_dashboard_btn' );
+remove_filter( 'woocommerce_get_item_data', 'dokan_product_seller_info', 10 );
 
 add_action( 'user_register', 'user_product_autopublish', 10, 1 );
 

@@ -10,7 +10,11 @@
 			<h3><?php _e( 'Tags for', 'html5blank' ); ?> <?php single_tag_title(); ?> </h3>
 		</header>
 			<div class="row">
-			<?php get_template_part('loop'); ?>
+				<div class="col-12">
+					<ul class="slider">
+						<?php get_template_part('loop'); ?>
+					</ul>
+				</div>
 
 			<?php get_template_part('pagination'); ?>
 		</div>
