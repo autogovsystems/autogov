@@ -167,18 +167,37 @@ function no_metabox_question()
     $editor5 = get_post_meta( $post->ID, '_editor_why', true);
     $editor6 = get_post_meta( $post->ID, '_editor_howmuch', true);
     wp_nonce_field( plugin_basename( __FILE__ ), '_nonce_editors' );
+    $settings =   array(
+        'wpautop' => true,
+        'media_buttons' => true,
+        'textarea_name' => $editor_id,
+        'textarea_rows' => get_option('default_post_edit_rows', 10), // rows="..."
+        'tabindex' => '',
+        'editor_css' => '',
+        'editor_class' => '',
+        'teeny' => false,
+        'dfw' => false,
+        'tinymce' => true,
+        'quicktags' => true
+    );
     echo '<h2>What</h2>';
-    echo wp_editor( $editor1, '_editor_what', array( 'textarea_name' => '_editor_what' ) );
+    $settings['textarea_name'] = '_editor_what';
+    echo wp_editor( $editor1, '_editor_what', $settings );
     echo '<h2>How</h2>';
-    echo wp_editor( $editor2, '_editor_how', array( 'textarea_name' => '_editor_how' ) );
+    $settings['textarea_name'] = '_editor_how';
+    echo wp_editor( $editor2, '_editor_how', $settings );
     echo '<h2>When</h2>';
-    echo wp_editor( $editor3, '_editor_when', array( 'textarea_name' => '_editor_when' ) );
+    $settings['textarea_name'] = '_editor_when';
+    echo wp_editor( $editor3, '_editor_when', $settings );
     echo '<h2>Where</h2>';
-    echo wp_editor( $editor4, '_editor_where', array( 'textarea_name' => '_editor_where' ) );
+    $settings['textarea_name'] = '_editor_where';
+    echo wp_editor( $editor4, '_editor_where', $settings );
     echo '<h2>Why</h2>';
-    echo wp_editor( $editor5, '_editor_why', array( 'textarea_name' => '_editor_why' ) );
+    $settings['textarea_name'] = '_editor_why';
+    echo wp_editor( $editor5, '_editor_why', $settings );
     echo '<h2>How much</h2>';
-    echo wp_editor( $editor6, '_editor_howmuch', array( 'textarea_name' => '_editor_howmuch' ) );
+    $settings['textarea_name'] = '_editor_howmuch';
+    echo wp_editor( $editor6, '_editor_howmuch', $settings );
 }
 
 /** Register meta boxes */
@@ -263,7 +282,7 @@ function question_relatedresolutions_callback($post) {
             </select>
           <script type="text/javascript">
               jQuery(document).ready(function() {
-                  $("#vontest_related").chosen({width: "100%"})
+                  jQuery("#vontest_related").chosen({width: "100%"})
               });
           </script>
             <?php /* Restore original Post Data */
@@ -317,7 +336,7 @@ function question_reset_votes_callback( $post ) {
     <?php _e('ATTENTION: This will erase all vows of this vontest and can not be undone','autogov'); ?>
     <script>
     jQuery(document).ready(function(){
-      $('#question_reset_votes').click(function() {
+      jQuery('#question_reset_votes').click(function() {
         if (confirm('<?php _e('ATTENTION: This will erase all vows of this vontest and can not be undone','autogov'); ?>')){
           var formData = new FormData();
           formData.append('action', 'question_reset_votes');
