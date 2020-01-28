@@ -122,8 +122,9 @@ function redirect_public_community(){
   $is_public = get_option('public_community');
   $mi_account_page = get_option('woocommerce_myaccount_page_id');
   if ((!is_user_logged_in() && $is_public !== '1') ) {
-    if((isset($post) && (string)$post->ID!==$mi_account_page) || !isset($post)){
-  	   header('Location:'.get_permalink( get_option('woocommerce_myaccount_page_id') ));
+    if(((isset($post) && (string)$post->ID!==$mi_account_page) || !isset($post)) && $mi_account_page !== ''){
+      
+  	   header('Location:'.get_permalink( $mi_account_page ));
        exit();
     }
   }

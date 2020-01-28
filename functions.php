@@ -636,7 +636,11 @@ add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 add_filter( 'login_url', 'my_login_page', 10, 3 );
 function my_login_page( $login_url, $redirect, $force_reauth ) {
+  $pagina_myaccount = get_option('woocommerce_myaccount_page_id');
+  if($pagina_myaccount && $pagina_myaccount !== ''){
     return get_permalink( get_option('woocommerce_myaccount_page_id').'/?redirect_to=' . $redirect );
+  }
+  return $login_url;
 }
 
 // Restrict section Functions
