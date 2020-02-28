@@ -156,7 +156,6 @@ class Vontest {
       }else{
         $votographies = array($metas);
       }
-      var_dump($votographies);
 
       update_post_meta($this->id,'_votographies',$votographies);
       if(sizeof($answer_most_voted)!==1){

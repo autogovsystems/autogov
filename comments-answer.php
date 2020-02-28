@@ -41,7 +41,7 @@
 			</div>
 		</div>
 	</div>
-<?php }elseif ( !comments_open() && !is_page() && post_type_supports( get_post_type(), 'comments' ) ) { var_dump(post_type_supports( get_post_type(), 'comments' ));?>
+<?php }elseif ( !comments_open() && !is_page() && post_type_supports( get_post_type(), 'comments' ) ) { //var_dump(post_type_supports( get_post_type(), 'comments' ));?>
 	<div class="col-12">
 		<p><?php _e( 'Comments are closed here.', 'autogov' ); ?></p>
 	</div>

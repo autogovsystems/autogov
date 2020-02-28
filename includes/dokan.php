@@ -128,7 +128,7 @@ function prefix_dokan_add_seller_nav( $urls ) {
 }
 add_filter( 'dokan_color_skin', 'dokan_color_custom_skin' );
 function dokan_color_custom_skin($a){
-  var_dump($a);
+  //var_dump($a);
 }
 add_filter('dokan_dashboard_nav_common_link','dokan_common_links_navigator');
 function dokan_common_links_navigator($common_links){
