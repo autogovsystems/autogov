@@ -25,9 +25,12 @@ add_action( 'init', 'remove_actions_userrole');
 
 function remove_results_from_leaderboard( $query, $class ) {
   $users_positions = get_users( [ 'role' => "autometa-position", 'fields' => 'ids' ] );
-  $query = str_replace( 'DISTINCT', '', $query );
-  $new_query = explode( 'ORDER BY', $query);
-  return $new_query[0]." AND u.ID not IN (".implode(',',$users_positions).") ORDER BY ".$new_query[1];
+  if( count( $users_positions ) > 0 ){
+    $query = str_replace( 'DISTINCT', '', $query );
+    $new_query = explode( 'ORDER BY', $query);
+    return $new_query[0]." AND u.ID not IN (".implode(',',$users_positions).") ORDER BY ".$new_query[1];
+  }
+  return $query;
 }
 
 add_filter( 'mycred_get_balance_leaderboard_sql', 'remove_results_from_leaderboard', 10, 2 );

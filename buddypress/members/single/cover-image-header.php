@@ -43,8 +43,10 @@ do_action( 'bp_before_member_header' ); ?>
 				<h3><?php bp_displayed_user_fullname(); ?>
                 <small>@<?php bp_displayed_user_mentionname(); ?></small></h3>
 			<?php endif;
-			echo do_shortcode('[mycred_my_balance type="applauds" title="'.__('Current Applauds:').'" user_id="'.bp_displayed_user_id().'"]');
-
+			$user = get_userdata( bp_displayed_user_id() );
+		  if (!in_array("autometa-position", $user->roles)){
+				echo do_shortcode('[mycred_my_balance type="applauds" title="'.__('Current Applauds:').'" user_id="'.bp_displayed_user_id().'"]');
+			}
 			?>
 
 			<span class="activity" data-livestamp="<?php bp_core_iso8601_date( bp_get_user_last_activity( bp_displayed_user_id() ) ); ?>"><?php bp_last_activity( bp_displayed_user_id() ); ?></span>

@@ -46,7 +46,10 @@ do_action( 'bp_before_member_header' ); ?>
 	<div id="item-meta">
 
 		<?php
-		echo do_shortcode('[mycred_my_balance type="applauds" title="'.__('Current Applauds:').'"]');
+		$user = get_userdata( bp_displayed_user_id() );
+	  if (!in_array("autometa-position", $user->roles)){
+			echo do_shortcode('[mycred_my_balance type="applauds" title="'.__('Current Applauds:').'"]');
+		}
 
 		if ( bp_is_active( 'activity' ) ) : ?>
 
