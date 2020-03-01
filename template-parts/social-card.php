@@ -14,7 +14,7 @@
   <div class="row tab">
       <button class="tablinks col active" data-id="groups"><?php _e('Groups','autogov'); ?></button>
       <button class="tablinks col" data-id="people"><?php _e('People','autogov'); ?></button>
-      <button class="tablinks col" data-id="searchsocial"><?php _e('The game','autogov'); ?></button>
+      <button class="tablinks col" data-id="game"><?php _e('The game','autogov'); ?></button>
       <?php if(!is_front_page()){ ?>
         <button class="tablinks col" data-id="search"><?php _e('Search','autogov'); ?></button>
       <?php } ?>
@@ -114,7 +114,7 @@
     </div>
   </div>
   <div class="row">
-    <div id="tab-searchsocial" class="tabcontent social game col-12 my-5 text-center">
+    <div id="tab-game" class="tabcontent social game col-12 text-center">
       <?php get_template_part('template-parts/leaderboard-box'); ?>
     </div>
   </div>

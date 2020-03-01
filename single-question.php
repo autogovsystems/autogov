@@ -204,30 +204,33 @@
 										</div>
 									</div>
 									<?php
-								    if(is_user_logged_in() && $current_vontest->is_active()){ ?>
+									$user = wp_get_current_user();
+								    if(is_user_logged_in() && $current_vontest->is_active() ){ ?>
 									<div class="col text-right answer_metrics">
 										<?php
 										$total_answer_points = get_total_answer_points(get_the_ID());
-										echo __("Esta respuesta tiene",'autogov').' '.$total_answer_points.__('puntos en total',"autogov").'<br />';
+										echo __("Esta respuesta tiene",'autogov').'  '.$total_answer_points.' '.__('puntos en total',"autogov").'<br />';
 										$current_answer_points=get_user_meta(get_current_user_id(), 'answer_'.get_the_ID(),true);
-										if($current_answer_points)
-											echo __("Tienes ",'autogov').$current_answer_points.__('punto(s) otorgado(s) a esta respuesta','autogov').'<br />';
-										else
-											echo __("No tienes puntos otorgados a esta respuesta<br>",'autogov');
-										$puntos_disponibles_respuesta = get_disposable_points($current_vontest->id,get_the_ID());
-										if($puntos_disponibles_respuesta || $current_answer_points)
-										{ ?>
-											<select id="<?php echo $post->ID; ?>" name="points">
-												<?php
-												for ($i=0; $i<=$puntos_disponibles_respuesta; $i++)
-													echo "<option value='$i'>$i ".__('points','autogov')."</option>";
+										if(!in_array("autometa-position", $user->roles)){
+												if($current_answer_points)
+													echo __("Tienes ",'autogov').$current_answer_points.__('punto(s) otorgado(s) a esta respuesta','autogov').'<br />';
+												else
+													echo __("No tienes puntos otorgados a esta respuesta<br>",'autogov');
+												$puntos_disponibles_respuesta = get_disposable_points($current_vontest->id,get_the_ID());
+												if(($puntos_disponibles_respuesta || $current_answer_points))
+												{ ?>
+													<select id="<?php echo $post->ID; ?>" name="points">
+														<?php
+														for ($i=0; $i<=$puntos_disponibles_respuesta; $i++)
+															echo "<option value='$i'>$i ".__('points','autogov')."</option>";
+														?>
+													</select>
+													<button class="button color_politics voteAnswer" id="<?php echo $post->ID; ?>"><?php _e('VOTE THIS ANSWER','autogov'); ?></button>
+												<?php }
+												else
+													echo __("No puedes votar esta respuesta, no te quedan más puntos en este vontest.",'autogov').'<br>';
 												?>
-											</select>
-											<button class="button color_politics voteAnswer" id="<?php echo $post->ID; ?>"><?php _e('VOTE THIS ANSWER','autogov'); ?></button>
-										<?php }
-										else
-											echo __("No puedes votar esta respuesta, no te quedan más puntos en este vontest.",'autogov').'<br>';
-										?>
+										<?php } ?>
 									</div>
 									<?php }	?>
 								</div>

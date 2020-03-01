@@ -619,7 +619,7 @@ body.activity #buddypress .item-list-tabs#subnav {margin-bottom:25px; margin-lef
 .mycred-my-balance-wrapper h1 { display: inline; font-size: 1em;}
 .mycred-my-balance-wrapper div { display: inline; }
 
-.myCRED-leaderboard li { display: inline-block; margin: 0.5em;  }
+.myCRED-leaderboard li { display: inline-block;  }
 .myCRED-leaderboard li .position_leaderboard { display: block; font-size: 1.5em; font-weight: bold; }
 .myCRED-leaderboard li .name_leaderboard { display: inline-block; }
 .myCRED-leaderboard li .name_leaderboard span { display: block;font-size: 0.6em; }

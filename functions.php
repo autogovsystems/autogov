@@ -663,6 +663,9 @@ function social_enabled(){
 //Página de parámetros de la comunidad
 require_once('includes/datos_generales.php');
 
+//Página donde se añade roles y se capan diversas funciones
+require_once('includes/roles.php');
+
 //Class Email
 require_once('includes/classes/class.wpmail.php');
 

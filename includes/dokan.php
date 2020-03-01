@@ -5,8 +5,11 @@ remove_filter( 'woocommerce_get_item_data', 'dokan_product_seller_info', 10 );
 add_action( 'user_register', 'user_product_autopublish', 10, 1 );
 
 function user_product_autopublish( $user_id ) {
+  $user = get_userdata( $user_id );
+  if (!in_array("autometa-position", $user->roles)){
     update_user_meta($user_id, 'dokan_publishing', 'yes');
     update_user_meta($user_id, 'dokan_enable_selling', 'yes');
+  }
 }
 
 //nueva función que acepta solicitudes de withdraw automáticamente
