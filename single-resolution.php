@@ -49,6 +49,8 @@
 				</div>
 				<p class="col-4 text-right">
 					<strong><?php the_title(); ?></strong><br/>
+					<?php $identificator_number = get_post_meta(get_the_ID(),'_identificator_number',true); ?>
+					<span><?php _e( 'Identificator Number:', 'html5blank' ); ?> <strong><?php echo $identificator_number ?></strong></span><br/>
 					<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
 				</p>
 				<div class="col-12"><hr/></div>
@@ -56,6 +58,10 @@
 					<?php $vontest_parent = get_post_meta(get_the_ID(),'_question_parent',true); ?>
 					<small><?php _e( 'Resolution for:', 'html5blank' ); ?> <?php echo get_the_title($vontest_parent); ?></small>
 				<?php the_content(); // Dynamic Content ?>
+				</div>
+				<div class="col-12"><hr/></div>
+				<div class="col-12 resolution-comments">
+				<?php comments_template(); ?>
 				</div>
 				<div class="col-12">
 				<?php edit_post_link(); // Always handy to have Edit Post Links available ?>

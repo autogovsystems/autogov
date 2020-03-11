@@ -146,7 +146,7 @@ add_action( 'init', 'question_custom_posttype' );
           'hierarchical' => false,
           'has_archive'=> true,
           'rewrite' => array('slug' => 'resolution'),
-          'supports' => array( 'title', 'editor', 'custom-fields' )
+          'supports' => array( 'title', 'editor', 'custom-fields', 'comments' )
       );
       register_post_type('resolution',$args);
 }
@@ -392,6 +392,22 @@ function resolution_parent_callback($post){
 <?php
 }
 
+function resolution_identificator_meta_boxes() {
+    add_meta_box( '', __( 'Identificator number', 'autogov' ), 'resolution_identificator_callback', 'resolution', 'side','high' );
+}
+add_action( 'add_meta_boxes', 'resolution_identificator_meta_boxes' );
+
+function resolution_identificator_callback( $post ){
+  wp_nonce_field( plugin_basename( __FILE__ ), '_identificator_number_nonce' );
+  $text = get_post_meta( $post->ID, '_identificator_number', true);
+    ?>
+	<p>
+		<label for="_identificator_number"><?php _e('identificator number','autogov'); ?></label>
+		<input type="text" name="_identificator_number" id="_identificator_number" value="<?php echo $text; ?>" />
+    </p>
+    <?php
+}
+
 /** Register meta box comments*/
 
 
@@ -525,7 +541,20 @@ function save_resolution( $post_id, $post_object ){
     }else{
       delete_post_meta( $post_id, '_question_parent' );
     }
+
+    if ( isset( $_POST['_identificator_number'] ) && !empty($_POST['_identificator_number']) ){
+        update_post_meta( $post_id, '_identificator_number', $_POST['_identificator_number'] );
+    }else{
+      delete_post_meta( $post_id, '_identificator_number' );
+    }
+
 }
+
+
+/*Save identificator number*/
+
+
+
 
 add_action( 'plugins_loaded', 'remove_comments_plugin_template',99999 );
 function remove_comments_plugin_template(){
