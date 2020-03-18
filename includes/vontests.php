@@ -400,14 +400,69 @@ add_action( 'add_meta_boxes', 'resolution_identificator_meta_boxes' );
 function resolution_identificator_callback( $post ){
   wp_nonce_field( plugin_basename( __FILE__ ), '_identificator_number_nonce' );
   $text = get_post_meta( $post->ID, '_identificator_number', true);
+  if(!$text){
+    $args = array(
+      'post_type' => 'resolution',
+      'meta_query' => array(
+          array(
+           'key' => '_identificator_number',
+           'compare' => 'EXISTS'
+          ),
+      ),
+      'posts_per_page' => 1,
+      'orderby' => '_identificator_number',
+      'order'   => 'DESC'
+    );
+    $getlastidentificator = new WP_Query( $args );
+    if ( $getlastidentificator->have_posts() ) {
+        while ( $getlastidentificator->have_posts() ) {
+            $getlastidentificator->the_post();
+            $text = get_post_meta(get_the_ID(),'_identificator_number',true);
+            $text = $text + 1;
+            $text = str_pad($text,4,'0',STR_PAD_LEFT);
+        }
+    } else {
+      $text = '0001';
+    }
+  }
     ?>
 	<p>
-		<label for="_identificator_number"><?php _e('identificator number','autogov'); ?></label>
-		<input type="text" name="_identificator_number" id="_identificator_number" value="<?php echo $text; ?>" />
+		<label for="_identificator_number"><?php _e('Identificator number','autogov'); ?></label>
+		<input type="number" pattern="\d{4}" name="_identificator_number" id="_identificator_number" value="<?php echo $text; ?>" />
     </p>
     <?php
 }
-
+add_filter( 'manage_resolution_posts_columns', 'resolution_filter_posts_columns' );
+function resolution_filter_posts_columns( $columns ) {
+  foreach($columns as $key=>$value) {
+    if( 'comments' == $key ) {
+      $new['identificator'] = __( 'Identificator' );
+    }
+    $new[$key]=$value;
+  }
+  return $new;
+}
+add_action( 'manage_resolution_posts_custom_column', 'resolution_realestate_column', 10, 2);
+function resolution_realestate_column( $column, $post_id ) {
+  if ( 'identificator' === $column ) {
+    echo get_post_meta( $post_id, '_identificator_number', true );
+  }
+}
+add_filter( 'manage_edit-resolution_sortable_columns', 'resolution_sortable_columns');
+function resolution_sortable_columns( $columns ) {
+  $columns['identificator'] = '_identificator_number';
+  return $columns;
+}
+add_action( 'pre_get_posts', 'my_slice_orderby' );
+function my_slice_orderby( $query ) {
+    if( ! is_admin() )
+        return;
+    $orderby = $query->get( 'orderby');
+    if( '_identificator_number' == $orderby ) {
+        $query->set('meta_key','_identificator_number');
+        $query->set('orderby','meta_value_num');
+    }
+}
 /** Register meta box comments*/
 
 
