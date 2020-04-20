@@ -1,11 +1,9 @@
 <?php
 
 /**
- * This file represents an example of the code that themes would use to register
- * the required plugins.
+ * This file represents an example of the code that themes would use to register the required plugins.
  *
- * It is expected that theme authors would copy and paste this code into their
- * functions.php file, and amend to suit.
+ * It is expected that theme authors would copy and paste this code into their functions.php file, and amend to suit.
  *
  * @see http://tgmpluginactivation.com/configuration/ for detailed documentation.
  *
@@ -64,7 +62,7 @@ function tgm261_register_required_plugins() {
         array(
             'name'               => 'WooCommerce', // The plugin name.
             'slug'               => 'woocommerce', // The plugin slug (typically the folder name).
-            'source'             => get_template_directory() . '/lib/plugins/woocommerce.3.4.6.zip', // The plugin source.
+            //'source'             => get_template_directory() . '/lib/plugins/woocommerce.3.4.6.zip', // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
             'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
             'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
@@ -75,7 +73,7 @@ function tgm261_register_required_plugins() {
         array(
             'name'               => 'BuddyPress', // The plugin name.
             'slug'               => 'buddypress', // The plugin slug (typically the folder name).
-            'source'             => get_template_directory() . '/lib/plugins/buddypress.3.2.0.zip', // The plugin source.
+            //'source'             => get_template_directory() . '/lib/plugins/buddypress.3.2.0.zip', // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
             'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
             'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
@@ -86,7 +84,7 @@ function tgm261_register_required_plugins() {
         array(
             'name'               => 'BBPress', // The plugin name.
             'slug'               => 'bbpress', // The plugin slug (typically the folder name).
-            'source'             => get_template_directory() . '/lib/plugins/bbpress.2.5.14.zip', // The plugin source.
+            //'source'             => get_template_directory() . '/lib/plugins/bbpress.2.5.14.zip', // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
             'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
             'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
@@ -97,7 +95,7 @@ function tgm261_register_required_plugins() {
         array(
             'name'               => 'Dokan Lite', // The plugin name.
             'slug'               => 'dokan-lite', // The plugin slug (typically the folder name).
-            'source'             => get_template_directory() . '/lib/plugins/dokan-lite.2.9.27.zip', // The plugin source.
+            //'source'             => get_template_directory() . '/lib/plugins/dokan-lite.2.9.27.zip', // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
             'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
             'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
@@ -108,7 +106,7 @@ function tgm261_register_required_plugins() {
         array(
             'name'               => 'MyCred', // The plugin name.
             'slug'               => 'mycred', // The plugin slug (typically the folder name).
-            'source'             => get_template_directory() . '/lib/plugins/mycred.1.7.9.7.zip', // The plugin source.
+            //'source'             => get_template_directory() . '/lib/plugins/mycred.1.7.9.7.zip', // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
             'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
             'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
@@ -119,7 +117,7 @@ function tgm261_register_required_plugins() {
         array(
             'name'               => 'Comment Popularity', // The plugin name.
             'slug'               => 'comment-popularity', // The plugin slug (typically the folder name).
-            'source'             => get_template_directory() . '/lib/plugins/comment-popularity.1.5.zip', // The plugin source.
+            //'source'             => get_template_directory() . '/lib/plugins/comment-popularity.1.5.zip', // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
             'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
             'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
@@ -130,7 +128,7 @@ function tgm261_register_required_plugins() {
         array(
             'name'               => 'rtMedia', // The plugin name.
             'slug'               => 'buddypress-media', // The plugin slug (typically the folder name).
-            'source'             => get_template_directory() . '/lib/plugins/buddypress-media.4.5.4.zip', // The plugin source.
+            //'source'             => get_template_directory() . '/lib/plugins/buddypress-media.4.5.4.zip', // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
             'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
             'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
@@ -141,7 +139,7 @@ function tgm261_register_required_plugins() {
         array(
             'name'               => 'BuddyPress Activity As Wire', // The plugin name.
             'slug'               => 'bp-activity-as-wire', // The plugin slug (typically the folder name).
-            'source'             => get_template_directory() . '/lib/plugins/bp-activity-as-wire-1.0.2.zip', // The plugin source.
+            //'source'             => get_template_directory() . '/lib/plugins/bp-activity-as-wire-1.0.2.zip', // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
             'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
             'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
